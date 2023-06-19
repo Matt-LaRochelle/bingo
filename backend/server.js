@@ -22,6 +22,7 @@ app.use((req, res, next) => {
 app.use('/api/bingos', bingoRoutes)
 app.use('/api/user', userRoutes)
 
+// lets go
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
