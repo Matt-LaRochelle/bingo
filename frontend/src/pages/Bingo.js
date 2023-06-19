@@ -74,6 +74,11 @@ const Bingo = () => {
                         <p>{bingo.entry}</p>
                     ))}
             </div>
+            <div>
+                {bingos && bingos.map((bingo) => (
+                        <p>{bingo.entry}</p>
+                    ))}
+            </div>
             
         </div>
     )
