@@ -7,8 +7,8 @@ const Bingo = () => {
     const {bingos, dispatch} = useBingosContext()
     const {user} = useAuthContext()
     const [numbers, setNumbers] = useState([])
-    const [create, setCreate] = useState(false)
 
+    // Get bingo entry information
     useEffect(() => {
         const fetchBingos = async () => {
             const response = await fetch('/api/bingos', {
@@ -29,22 +29,22 @@ const Bingo = () => {
         
     }, [dispatch, user])
 
-    // Check the bingos data
+    // Check the bingo entries list
     const handleClick = () => {
         console.log(bingos)
     }
-    // Reset the bingo list
+    // Reset the random generation list
     const reset = () => {
         setNumbers([])
         console.log(numbers)
         console.log("Reset complete")
     }
-    // Reveal the bingo list
+    // Reveal the random generation list
     const reveal = () => {
         console.log(numbers)
     }
 
-    // main logic for creating a bingo list
+    // generate 25 random numbers
     const createCard = () => {
         if (bingos.length < 25) {
             alert("You must have at least 25 entries to begin.")
@@ -53,10 +53,8 @@ const Bingo = () => {
             let i = 0;
             let array = []
             while (i < 25) {
-                const number = Math.floor(Math.random() * 25) + 1;
-                if (array.includes(number)) {
-                    console.log("Try again")
-                } else {
+                const number = Math.floor(Math.random() * bingos.length) + 1;
+                if (!array.includes(number)) {
                     array.push(number)
                     i++;
                 }
@@ -69,8 +67,14 @@ const Bingo = () => {
         <div className="home">
             <button onClick={handleClick}>Get bingo details</button>
             <button onClick={createCard}>Create a card</button>
-            <button onClick={reset}>Reset things</button>
-            <button onClick={reveal}>Reveal things</button>
+            <button onClick={reset}>Reset random numbers to empty array</button>
+            <button onClick={reveal}>Reveal array of numbers</button>
+            <div>
+                {bingos && bingos.map((bingo) => (
+                        <p>{bingo.entry}</p>
+                    ))}
+            </div>
+            
         </div>
     )
 }
