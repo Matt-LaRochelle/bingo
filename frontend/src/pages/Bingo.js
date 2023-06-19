@@ -51,16 +51,21 @@ const Bingo = () => {
             return
         } else {
             setCreate(true)
+            if (numbers.length > 10) {
+                setCreate(false)
+            }
         }
     }
 
     useEffect(() => {
-        let i = 0;
-        while (i < 20) {
-            const number = Math.floor(Math.random() * bingos.length) + 1;
-            setNumbers([...numbers, number])
-            i++;
-        }
+        if (create) {
+            let i = 0;
+            while (i < 20) {
+                const number = Math.floor(Math.random() * bingos.length) + 1;
+                setNumbers([...numbers, number])
+                i++;
+            }
+        }   
     }, [create])
     //whats up? did we get it?
     return (
