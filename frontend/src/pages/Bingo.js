@@ -50,24 +50,21 @@ const Bingo = () => {
             alert("You must have at least 25 entries to begin.")
             return
         } else {
-            setCreate(true)
-            if (numbers.length > 10) {
-                setCreate(false)
+            let i = 0;
+            let array = []
+            while (i < 25) {
+                const number = Math.floor(Math.random() * 25) + 1;
+                if (array.includes(number)) {
+                    console.log("Try again")
+                } else {
+                    array.push(number)
+                    i++;
+                }
             }
+            setNumbers(array)
         }
     }
 
-    useEffect(() => {
-        if (create) {
-            let i = 0;
-            while (i < 20) {
-                const number = Math.floor(Math.random() * bingos.length) + 1;
-                setNumbers([...numbers, number])
-                i++;
-            }
-        }   
-    }, [create])
-    //whats up? did we get it?
     return (
         <div className="home">
             <button onClick={handleClick}>Get bingo details</button>
