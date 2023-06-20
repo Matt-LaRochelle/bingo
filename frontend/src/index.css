@@ -38,8 +38,8 @@ header a {
 /* homepage */
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  grid-template-columns: 1fr 3fr;
+  gap: 50px;
 }
 .workout-details {
   background: #fff;
@@ -53,6 +53,7 @@ header a {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
+  max-width: 93%;
 }
 .workout-details p {
   margin: 0;
@@ -139,31 +140,6 @@ input.error {
   margin: 2px;
 }
 
-@media screen and (max-width: 750px) {
-  .bingo {
-    height: 400px;
-    width: 400px;
-  }
-  .bingo-cell {
-    height: 80px;
-    width: 80px;
-    font-size: .48rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .bingo {
-    height: 250px;
-    width: 250px;
-  }
-  .bingo-cell {
-    height: 50px;
-    width: 50px;
-    font-size: .3rem;
-  }
-}
-
-
 /* navbar */
 nav {
   display: flex;
@@ -183,6 +159,9 @@ nav button {
   font-size: 1em;
   margin-left: 10px;
 }
+.container {
+  border: 2px solid lime;
+}
 
 /* auth forms */
 form.signup, form.login {
@@ -191,4 +170,36 @@ form.signup, form.login {
   padding: 20px;
   background: #fff;
   border-radius: 4px;
+}
+
+
+@media screen and (max-width: 956px) {
+  .home {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 750px) {
+  .bingo {
+    height: 400px;
+    width: 400px;
+  }
+  .bingo-cell {
+    height: 80px;
+    width: 80px;
+    font-size: .48rem;
+  }
+  .container {
+    font-size: .8rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .bingo {
+    height: 250px;
+    width: 250px;
+  }
+  .bingo-cell {
+    height: 50px;
+    width: 50px;
+    font-size: .3rem;
+  }
 }

@@ -30,19 +30,19 @@ const Home = () => {
         
     }, [dispatch, user])
 
-    const handleClick = () => {
-        console.log(bingos)
-    }
+    // const handleClick = () => {
+    //     console.log(bingos)
+    // }
 
     return (
         <div className="home">
+            <BingoForm className="form" />
             <div className="workouts">
                 {bingos && bingos.map((bingo) => (
                     <BingoDetails key={bingo._id} bingo={bingo} />
                 ))}
             </div>
-            <BingoForm />
-            <button onClick={handleClick}>Get bingo details</button>
+            {/* <button onClick={handleClick}>Get bingo details</button> */}
         </div>
     )
 }
