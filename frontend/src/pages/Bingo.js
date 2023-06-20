@@ -28,7 +28,7 @@ const Bingo = () => {
             fetchBingos()
         }
         
-    }, [dispatch, user])
+    }, [dispatch, user, newBingos])
 
     // Check the bingo entries list
     const handleClick = () => {
@@ -66,28 +66,31 @@ const Bingo = () => {
             setNumbers(() => array)
 
             // create a new array with the bingos in the order of the randomly generated numbers
-            console.log("array:", array)
-            console.log("numbers:", numbers)
-            // setNewBingos(() => array.map((index) => bingos[index].entry))
-            // console.log("newBingos:", newBingos)
+            setNewBingos(() => {
+                return array.map((index) => bingos[index - 1])
+            })
         }
     }
 
     return (
-        <div className="home">
-            <button onClick={handleClick}>Get bingo details</button>
-            <button onClick={createCard}>Create a card</button>
-            <button onClick={reset}>Reset random numbers to empty array</button>
-            <button onClick={reveal}>Reveal array of numbers</button>
-            <div>
+        <div className="create-bingo">
+            <div className="bingo-buttons">
+                <button onClick={handleClick}>Get bingo details</button>
+                <button onClick={createCard}>Create a card</button>
+                <button onClick={reset}>Reset random numbers to empty array</button>
+                <button onClick={reveal}>Reveal array of numbers</button>
+            </div>
+            <h2>Current Bingo Entries:</h2>
+            <div className="bingo">
                 {bingos && bingos.map((bingo) => (
                         <p>{bingo.entry}</p>
                     ))}
             </div>
-            <div>
-                {/* {newBingos && newBingos.map((bingo) => (
-                        <p>{bingo.entry}</p>
-                    ))} */}
+            <h2>New Bingo Card:</h2>
+            <div className="bingo">
+                {newBingos && newBingos.map((newBingo) => (
+                    <p className="bingo-single-entry">{newBingo.entry}</p>
+                ))}
             </div>
             
         </div>

@@ -101,6 +101,23 @@ input.error {
   border: 1px solid var(--error);
 }
 
+/*bingo page */
+.bingo-buttons {
+  display: flex;
+  justify-content: center;
+}
+.bingo-buttons button {
+  margin: 0 10px;
+}
+.bingo {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 2px solid lime;
+}
+.bingo-single-entry {
+  border: 2px solid lime;
+}
+
 /* navbar */
 nav {
   display: flex;
