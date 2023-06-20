@@ -7,6 +7,7 @@ const Bingo = () => {
     const {bingos, dispatch} = useBingosContext()
     const {user} = useAuthContext()
     const [numbers, setNumbers] = useState([])
+    const [newBingos, setNewBingos] = useState(null)
 
     // Get bingo entry information
     useEffect(() => {
@@ -50,6 +51,7 @@ const Bingo = () => {
             alert("You must have at least 25 entries to begin.")
             return
         } else {
+            // run loop to create 25 random numbers
             let i = 0;
             let array = []
             while (i < 25) {
@@ -59,7 +61,15 @@ const Bingo = () => {
                     i++;
                 }
             }
-            setNumbers(array)
+
+            // set a list with the random numbers
+            setNumbers(() => array)
+
+            // create a new array with the bingos in the order of the randomly generated numbers
+            console.log("array:", array)
+            console.log("numbers:", numbers)
+            // setNewBingos(() => array.map((index) => bingos[index].entry))
+            // console.log("newBingos:", newBingos)
         }
     }
 
@@ -75,9 +85,9 @@ const Bingo = () => {
                     ))}
             </div>
             <div>
-                {bingos && bingos.map((bingo) => (
+                {/* {newBingos && newBingos.map((bingo) => (
                         <p>{bingo.entry}</p>
-                    ))}
+                    ))} */}
             </div>
             
         </div>
