@@ -105,6 +105,9 @@ input.error {
 }
 
 /*bingo page */
+.create-bingo {
+  text-align: center;
+}
 .bingo-buttons {
   display: flex;
   justify-content: center;
@@ -123,6 +126,7 @@ input.error {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
   width: 750px;
   height: 750px;
+  margin: 0 auto;
 }
 .bingo-cell {
   border: 2px solid #333;
@@ -133,6 +137,30 @@ input.error {
 }
 .bingo-cell h4 {
   margin: 2px;
+}
+
+@media screen and (max-width: 750px) {
+  .bingo {
+    height: 400px;
+    width: 400px;
+  }
+  .bingo-cell {
+    height: 80px;
+    width: 80px;
+    font-size: .48rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .bingo {
+    height: 250px;
+    width: 250px;
+  }
+  .bingo-cell {
+    height: 50px;
+    width: 50px;
+    font-size: .3rem;
+  }
 }
 
 

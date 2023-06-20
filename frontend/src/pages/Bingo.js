@@ -32,20 +32,20 @@ const Bingo = () => {
         
     }, [dispatch, user, newBingos])
 
-    // Check the bingo entries list
-    const handleClick = () => {
-        console.log(bingos)
-    }
-    // Reset the random generation list
-    const reset = () => {
-        setNumbers([])
-        console.log(numbers)
-        console.log("Reset complete")
-    }
-    // Reveal the random generation list
-    const reveal = () => {
-        console.log(numbers)
-    }
+    // // Check the bingo entries list
+    // const handleClick = () => {
+    //     console.log(bingos)
+    // }
+    // // Reset the random generation list
+    // const reset = () => {
+    //     setNumbers([])
+    //     console.log(numbers)
+    //     console.log("Reset complete")
+    // }
+    // // Reveal the random generation list
+    // const reveal = () => {
+    //     console.log(numbers)
+    // }
 
     // generate 25 random numbers
     const createCard = () => {
@@ -77,16 +77,10 @@ const Bingo = () => {
     return (
         <div className="create-bingo">
             <div className="bingo-buttons">
-                <button onClick={handleClick}>Get bingo details</button>
+                {/* <button onClick={handleClick}>Get bingo details</button> */}
                 <button onClick={createCard}>Create a card</button>
-                <button onClick={reset}>Reset random numbers to empty array</button>
-                <button onClick={reveal}>Reveal array of numbers</button>
-            </div>
-            <h2>Current Bingo Entries:</h2>
-            <div className="bingo">
-                {bingos && bingos.map((bingo) => (
-                        <p>{bingo.entry}</p>
-                    ))}
+                {/* <button onClick={reset}>Reset random numbers to empty array</button>
+                <button onClick={reveal}>Reveal array of numbers</button> */}
             </div>
             <h2>New Bingo Card:</h2>
             <div className="bingo">
