@@ -13,31 +13,27 @@ const Navbar = () => {
     }
 
     const openMenu = () => {
-        console.log("You clicked me!")
         setNav(!nav)
     }
-    const nlink = "nav-links";
-    const nactive = "nav-active";
-
-    // className={nav ? ["menu", "active"].join(' ') : ["menu"]}
 
     return (
         <header>
             <div className="container">
                     <Link to="/">
-                        <h1>DnD Extras</h1>
+                        <h1>Bingo Cards</h1>
                     </Link>
                 <nav>
                     {user && (
                         <div>
-                            <div className={nav ? nactive : nlink}>
-                                <Link to="/bingo">Bingo</Link>
+                            <div className={nav ? "nav-links nav-active" : "nav-links"}>
+                                <Link to="/"><p>Create Entry</p></Link>
+                                <Link to="/bingo"><p>Generate Bingo</p></Link>
                                 <span>{user.email}</span>
                                 <button onClick={handleClick}>Log out</button>
                             </div>
                             <div className="nav-hamburger">
                                 <span onClick={openMenu} class="material-symbols-outlined">
-                                    Menu
+                                    {nav ? "Close" : "Menu"}
                                 </span>
                             </div>
                         </div>
