@@ -52,7 +52,7 @@ const BingoForm = () => {
                 type="text"
                 onChange={(e) => setEntry(e.target.value)}
                 value={entry}
-                className={emptyFields.includes('entry') ? 'error' : ''}
+                className={emptyFields && emptyFields.includes('entry') ? 'error' : ''}
             />
 
             <button>Add Entry</button>

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useBingosContext } from '../hooks/useBingosContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
+import BingoCell from '../components/BingoCell'
+
 
 const Bingo = () => {
     const {bingos, dispatch} = useBingosContext()
@@ -89,7 +91,7 @@ const Bingo = () => {
             <h2>New Bingo Card:</h2>
             <div className="bingo">
                 {newBingos && newBingos.map((newBingo) => (
-                    <p className="bingo-single-entry">{newBingo.entry}</p>
+                    <BingoCell bingo={newBingo}>{newBingo.entry}</BingoCell>
                 ))}
             </div>
             

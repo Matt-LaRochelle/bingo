@@ -115,17 +115,26 @@ input.error {
 .bingo {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  border: 2px solid lime;
+  grid-column-gap: 0;
+  /* border: 2px solid lime; */
   justify-content: center;
   justify-self: center;
+  background: #f8f8f8;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  width: 750px;
+  height: 750px;
 }
-.bingo-single-entry {
-  border: 2px solid lime;
+.bingo-cell {
+  border: 2px solid #333;
   height: 150px;
   width: 150px;
   text-align: center;
   justify-self: center;
 }
+.bingo-cell h4 {
+  margin: 2px;
+}
+
 
 /* navbar */
 nav {

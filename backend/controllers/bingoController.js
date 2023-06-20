@@ -41,6 +41,9 @@ const createBingo = async (req, res) => {
     if (emptyFields.length > 0) {
         return res.status(400).json({ error: 'Please fill in all the fields.', emptyFields})
     }
+    if (entry.length > 80) {
+        return res.status(400).json({error: 'Entry has a max length of 80 characters.' })
+    }
 
     // add doc to db
     try {
