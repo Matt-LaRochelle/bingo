@@ -12,6 +12,7 @@ const Bingo = () => {
     const {user} = useAuthContext()
     const [numbers, setNumbers] = useState([])
     const [newBingos, setNewBingos] = useState(null)
+    const [title, setTitle] = useState('Choose a title:')
 
     // Get bingo entry information
     useEffect(() => {
@@ -76,6 +77,9 @@ const Bingo = () => {
         }
     }
 
+    const handleChange = (e) => {
+        setTitle(e.target.value);
+    }
 
     const downloadCard = () => {
         if (newBingos === null) {
@@ -85,7 +89,7 @@ const Bingo = () => {
         // Default export is a4 paper, portrait, using millimeters for units
         const doc = new jsPDF();
         doc.setFontSize(11);
-        doc.text("Title of Bingo card here!", 85, 35);
+        doc.text(title, 85, 35);
         // doc.addImage(emptyCard, "PNG", 15, 40, 180, 180);
         doc.cell(19, 43, 35, 35, newBingos[0].entry)
         doc.cell(54, 43, 35, 35, newBingos[1].entry)
@@ -126,7 +130,8 @@ const Bingo = () => {
                 {/* <button onClick={reset}>Reset random numbers to empty array</button>
                 <button onClick={reveal}>Reveal array of numbers</button> */}
             </div>
-            <h2>New Bingo Card:</h2>
+            <input className="title" type="text" placeholder='Title:' value={title} onChange={handleChange}></input>
+            <h2>{title}</h2>
             <div className="bingo">
                 {newBingos && newBingos.map((newBingo) => (
                     <BingoCell bingo={newBingo}>{newBingo.entry}</BingoCell>

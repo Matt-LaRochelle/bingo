@@ -109,6 +109,11 @@ input.error {
 .create-bingo {
   text-align: center;
 }
+.title {
+  width: 200px;
+  display: block;
+  margin: 20px auto;
+}
 .bingo-buttons {
   display: flex;
   justify-content: center;
