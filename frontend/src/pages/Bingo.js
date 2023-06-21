@@ -3,6 +3,8 @@ import { useBingosContext } from '../hooks/useBingosContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
 import BingoCell from '../components/BingoCell'
+import { jsPDF } from "jspdf";
+import emptyCard from '../resources/empty_card.png'
 
 
 const Bingo = () => {
@@ -74,11 +76,53 @@ const Bingo = () => {
         }
     }
 
+
+    const downloadCard = () => {
+        if (newBingos === null) {
+            alert("Must create a card before downloading.")
+            return;
+        }
+        // Default export is a4 paper, portrait, using millimeters for units
+        const doc = new jsPDF();
+        doc.setFontSize(11);
+        doc.text("Title of Bingo card here!", 85, 35);
+        // doc.addImage(emptyCard, "PNG", 15, 40, 180, 180);
+        doc.cell(19, 43, 35, 35, newBingos[0].entry)
+        doc.cell(54, 43, 35, 35, newBingos[1].entry)
+        doc.cell(89, 43, 35, 35, newBingos[2].entry)
+        doc.cell(124, 43, 35, 35, newBingos[3].entry)
+        doc.cell(159, 43, 35, 35, newBingos[4].entry)
+        doc.cell(19, 78, 35, 35, newBingos[5].entry)
+        doc.cell(54, 78, 35, 35, newBingos[6].entry)
+        doc.cell(89, 78, 35, 35, newBingos[7].entry)
+        doc.cell(124, 78, 35, 35, newBingos[8].entry)
+        doc.cell(159, 78, 35, 35, newBingos[9].entry)
+        doc.cell(19, 113, 35, 35, newBingos[10].entry)
+        doc.cell(54, 113, 35, 35, newBingos[11].entry)
+        doc.cell(89, 113, 35, 35, newBingos[12].entry)
+        doc.cell(124, 113, 35, 35, newBingos[13].entry)
+        doc.cell(159, 113, 35, 35, newBingos[14].entry)
+        doc.cell(19, 148, 35, 35, newBingos[15].entry)
+        doc.cell(54, 148, 35, 35, newBingos[16].entry)
+        doc.cell(89, 148, 35, 35, newBingos[17].entry)
+        doc.cell(124, 148, 35, 35, newBingos[18].entry)
+        doc.cell(159, 148, 35, 35, newBingos[19].entry)
+        doc.cell(19, 183, 35, 35, newBingos[20].entry)
+        doc.cell(54, 183, 35, 35, newBingos[21].entry)
+        doc.cell(89, 183, 35, 35, newBingos[22].entry)
+        doc.cell(124, 183, 35, 35, newBingos[23].entry)
+        doc.cell(159, 183, 35, 35, newBingos[24].entry)
+        doc.save("a4.pdf");
+
+    }
+    
+
     return (
         <div className="create-bingo">
             <div className="bingo-buttons">
                 {/* <button onClick={handleClick}>Get bingo details</button> */}
-                <button onClick={createCard}>Create a card</button>
+                <button onClick={createCard}>Create card</button>
+                <button onClick={downloadCard}>Download card</button>
                 {/* <button onClick={reset}>Reset random numbers to empty array</button>
                 <button onClick={reveal}>Reveal array of numbers</button> */}
             </div>
@@ -88,7 +132,6 @@ const Bingo = () => {
                     <BingoCell bingo={newBingo}>{newBingo.entry}</BingoCell>
                 ))}
             </div>
-            
         </div>
     )
 }
