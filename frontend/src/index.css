@@ -129,7 +129,7 @@ input.error {
   justify-content: center;
   justify-self: center;
   background: #f8f8f8;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.5);
   width: 750px;
   height: 750px;
   margin: 0 auto;
