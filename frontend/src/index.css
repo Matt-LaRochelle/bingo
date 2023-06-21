@@ -163,6 +163,11 @@ nav button {
 .nav-hamburger {
   display: none;
 }
+.login-links {
+  width: 130px;
+  display: flex;
+  justify-content: space-around;
+}
 
 /* auth forms */
 form.signup, form.login {
