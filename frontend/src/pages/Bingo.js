@@ -86,11 +86,21 @@ const Bingo = () => {
             alert("Must create a card before downloading.")
             return;
         }
+        if (title.length > 35) {
+            alert("Title max length is 35 characters.")
+            return;
+        }
         // Default export is a4 paper, portrait, using millimeters for units
         const doc = new jsPDF();
-        doc.setFontSize(11);
-        doc.text(title, 85, 35);
+        
+        // doc.text(title, 85, 35);
+        doc.setFontSize(20);
+        doc.setFont("bold");
+        doc.text(title, 108, 35, null, null, "center");
         // doc.addImage(emptyCard, "PNG", 15, 40, 180, 180);
+        doc.setFontSize(11);
+        doc.setFont("normal");
+        doc.setDrawColor(255, 0, 0);
         doc.cell(19, 43, 35, 35, newBingos[0].entry)
         doc.cell(54, 43, 35, 35, newBingos[1].entry)
         doc.cell(89, 43, 35, 35, newBingos[2].entry)
