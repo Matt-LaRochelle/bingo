@@ -99,7 +99,9 @@ div.error {
   border: 1px solid var(--error);
   color: var(--error);
   border-radius: 4px;
-  margin: 20px 0;
+  max-width: 200px;
+  display: block;
+  margin: 20px auto;
 }
 input.error {
   border: 1px solid var(--error);

@@ -13,6 +13,7 @@ const Bingo = () => {
     const [numbers, setNumbers] = useState([])
     const [newBingos, setNewBingos] = useState(null)
     const [title, setTitle] = useState('Choose a title:')
+    const [error, setError] = useState(null);
 
     // Get bingo entry information
     useEffect(() => {
@@ -35,27 +36,22 @@ const Bingo = () => {
         
     }, [dispatch, user, newBingos])
 
-    // // Check the bingo entries list
-    // const handleClick = () => {
-    //     console.log(bingos)
-    // }
-    // // Reset the random generation list
-    // const reset = () => {
-    //     setNumbers([])
-    //     console.log(numbers)
-    //     console.log("Reset complete")
-    // }
-    // // Reveal the random generation list
-    // const reveal = () => {
-    //     console.log(numbers)
-    // }
+    // Make sure title doesn't get too large
+    useEffect(() => {
+        if (title.length > 40) {
+            setError("Title max length is 40 characters.")
+        } else {
+            setError(null)
+        }
+    }, [title])
 
     // generate 25 random numbers
     const createCard = () => {
         if (bingos.length < 25) {
-            alert("You must have at least 25 entries to begin.")
+            setError("You must have at least 25 entries to begin.")
             return
         } else {
+            setError(null)
             // run loop to create 25 random numbers
             let i = 0;
             let array = []
@@ -83,14 +79,15 @@ const Bingo = () => {
 
     const downloadCard = () => {
         if (newBingos === null) {
-            alert("Must create a card before downloading.")
+            setError("Must create a card before downloading.")
             return;
         }
-        if (title.length > 35) {
-            alert("Title max length is 35 characters.")
+        if (title.length > 40) {
+            setError("Title max length is 40 characters.")
             return;
         }
         // Default export is a4 paper, portrait, using millimeters for units
+        setError(null)
         const doc = new jsPDF();
         
         // doc.text(title, 85, 35);
@@ -100,7 +97,7 @@ const Bingo = () => {
         // doc.addImage(emptyCard, "PNG", 15, 40, 180, 180);
         doc.setFontSize(11);
         doc.setFont("normal");
-        doc.setDrawColor(255, 0, 0);
+        // doc.setDrawColor(255, 0, 0);
         doc.cell(19, 43, 35, 35, newBingos[0].entry)
         doc.cell(54, 43, 35, 35, newBingos[1].entry)
         doc.cell(89, 43, 35, 35, newBingos[2].entry)
@@ -127,12 +124,12 @@ const Bingo = () => {
         doc.cell(124, 183, 35, 35, newBingos[23].entry)
         doc.cell(159, 183, 35, 35, newBingos[24].entry)
         doc.save("a4.pdf");
-
     }
     
 
     return (
         <div className="create-bingo">
+        {error && <div className="error">{error}</div>}
             <div className="bingo-buttons">
                 {/* <button onClick={handleClick}>Get bingo details</button> */}
                 <button onClick={createCard}>Create card</button>
