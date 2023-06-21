@@ -26,8 +26,8 @@ const Navbar = () => {
                     {user && (
                         <div>
                             <div className={nav ? "nav-links nav-active" : "nav-links"}>
-                                <Link to="/"><p>Create Entry</p></Link>
-                                <Link to="/bingo"><p>Generate Bingo</p></Link>
+                                <Link onClick={openMenu} to="/"><p>Create Entry</p></Link>
+                                <Link onClick={openMenu} to="/bingo"><p>Generate Bingo</p></Link>
                                 <span>{user.email}</span>
                                 <button onClick={handleClick}>Log out</button>
                             </div>
