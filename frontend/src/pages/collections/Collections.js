@@ -3,8 +3,8 @@ import { useCollectionsContext } from '../../hooks/useCollectionsContext'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import styles from './Collections.module.css'
 
-import CollectionDetails from '../../components/Collections/CollectionDetails'
-import CollectionForm from '../../components/Collections/CollectionForm'
+import CollectionDetails from './components/CollectionDetails'
+import CollectionForm from './components/CollectionForm'
 
 const Collections = ({toggle}) => {
     const {collections, dispatch} = useCollectionsContext()

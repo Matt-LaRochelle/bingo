@@ -1,10 +1,10 @@
-import { useBingosContext } from "../hooks/useBingosContext"
-import { useAuthContext } from '../hooks/useAuthContext'
+import { useBingosContext } from "../../../hooks/useBingosContext"
+import { useAuthContext } from '../../../hooks/useAuthContext'
 
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
-const BingoDetails = ({ bingo }) => {
+const EntryDetails = ({ bingo }) => {
     const { dispatch } = useBingosContext()
     const { user } = useAuthContext()
 
@@ -35,4 +35,4 @@ const BingoDetails = ({ bingo }) => {
     )
 }
 
-export default BingoDetails
+export default EntryDetails

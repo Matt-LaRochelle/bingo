@@ -1,19 +1,12 @@
 import { Link } from 'react-router-dom'
-import { useLogout } from '../hooks/useLogout'
-import { useAuthContext } from '../hooks/useAuthContext'
-import { useState } from 'react'
-
+import { useLogout } from '../../../hooks/useLogout'
+import { useAuthContext } from '../../../hooks/useAuthContext'
 const Navbar = () => {
     const { logout } = useLogout()
     const { user } = useAuthContext()
-    const [nav, setNav] = useState(false);
 
     const handleClick = () => {
         logout()
-    }
-
-    const openMenu = () => {
-        setNav(!nav)
     }
 
     return (
@@ -25,17 +18,9 @@ const Navbar = () => {
                 <nav>
                     {user && (
                         <div>
-                            <div className={nav ? "nav-links nav-active" : "nav-links"}>
-                                {/* <Link onClick={openMenu} to="/entries"><p>Create Entry</p></Link>
-                                <Link onClick={openMenu} to="/bingo"><p>Generate Bingo</p></Link>
-                                <Link onClick={openMenu} to="/collections"><p>Collections</p></Link> */}
+                            <div>
                                 <span>{user.email}</span>
                                 <button onClick={handleClick}>Log out</button>
-                            </div>
-                            <div className="nav-hamburger">
-                                <span onClick={openMenu} class="material-symbols-outlined">
-                                    {nav ? "Close" : "Menu"}
-                                </span>
                             </div>
                         </div>
                     )}

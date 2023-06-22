@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { useBingosContext } from '../hooks/useBingosContext'
-import { useAuthContext } from '../hooks/useAuthContext'
+import { useBingosContext } from '../../hooks/useBingosContext'
+import { useAuthContext } from '../../hooks/useAuthContext'
 
-import BingoCell from '../components/BingoCell'
+import BingoCell from './components/BingoCell'
 import { jsPDF } from "jspdf";
 
 

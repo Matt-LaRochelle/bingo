@@ -3,10 +3,7 @@ import { useAuthContext } from './hooks/useAuthContext'
 
 // pages & components
 import Main from './pages/main/Main'
-import Entries from './pages/Entries'
-import Bingo from './pages/Bingo'
-import Collections from './pages/collections/Collections'
-import Navbar from './components/Navbar'
+import Navbar from './pages/main/components/Navbar'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 
@@ -22,18 +19,6 @@ function App() {
           <Route
               path="/"
               element={user ? <Main /> : <Navigate to="/login" />}
-            />
-            <Route
-              path="/collections"
-              element={user ? <Collections /> : <Navigate to="/login" />}
-            />
-            <Route
-              path="/bingo"
-              element={user ? <Bingo /> : <Navigate to="/login" />}
-            />
-            <Route
-              path="/entries"
-              element={user ? <Entries /> : <Navigate to="/login" />}
             />
             <Route
               path="/login"

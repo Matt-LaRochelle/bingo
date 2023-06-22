@@ -1,7 +1,6 @@
 import styles from './Collection.module.css'
-import { Link } from 'react-router-dom'
-import { useCollectionsContext } from "../../hooks/useCollectionsContext"
-import { useAuthContext } from '../../hooks/useAuthContext'
+import { useCollectionsContext } from "../../../hooks/useCollectionsContext"
+import { useAuthContext } from '../../../hooks/useAuthContext'
 
 const CollectionDetails = ({ collection, toggle }) => {
     const { dispatch } = useCollectionsContext()

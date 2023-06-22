@@ -1,7 +1,7 @@
 import styles from './Collection.module.css'
 import { useState } from 'react'
-import { useCollectionsContext } from "../../hooks/useCollectionsContext"
-import { useAuthContext } from '../../hooks/useAuthContext'
+import { useCollectionsContext } from "../../../hooks/useCollectionsContext"
+import { useAuthContext } from '../../../hooks/useAuthContext'
 
 const CollectionForm = () => {
     const { dispatch } = useCollectionsContext()

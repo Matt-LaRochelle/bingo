@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { useBingosContext } from "../hooks/useBingosContext"
-import { useAuthContext } from '../hooks/useAuthContext'
+import { useBingosContext } from "../../../hooks/useBingosContext"
+import { useAuthContext } from '../../../hooks/useAuthContext'
 
-const BingoForm = ({toggle}) => {
+const EntryForm = ({toggle}) => {
     const { dispatch } = useBingosContext()
     const { user } = useAuthContext()
 
@@ -61,4 +61,4 @@ const BingoForm = ({toggle}) => {
     )
 }
 
-export default BingoForm
+export default EntryForm

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Collections from '../collections/Collections'
-import Entries from '../Entries'
-import Bingo from '../Bingo'
+import Entries from '../entries/Entries'
+import Bingo from '../bingo/Bingo'
 
 const Main = () => {
     const [collectionsView, setCollectionsView] = useState(true)
