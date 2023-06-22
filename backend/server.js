@@ -1,8 +1,9 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const bingoRoutes = require('./routes/bingos');
 const userRoutes = require('./routes/user')
+const collectionRoutes = require('./routes/collections')
+const bingoRoutes = require('./routes/bingos');
 
 
 // express app
@@ -19,8 +20,9 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use('/api/bingos', bingoRoutes)
 app.use('/api/user', userRoutes)
+app.use('/api/collections', collectionRoutes)
+app.use('/api/bingos', bingoRoutes)
 
 // lets go
 // connect to db

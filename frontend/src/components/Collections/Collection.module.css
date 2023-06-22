@@ -1,0 +1,19 @@
+.container {
+    border: 2px solid red;
+    max-width: 250px;
+    height: 250px;
+    position: relative;
+}
+
+.container h2 {
+    text-align: center;
+}
+
+
+
+.container button {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

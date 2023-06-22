@@ -4,7 +4,6 @@ import { useAuthContext } from '../hooks/useAuthContext'
 
 import BingoCell from '../components/BingoCell'
 import { jsPDF } from "jspdf";
-import emptyCard from '../resources/empty_card.png'
 
 
 const Bingo = () => {
