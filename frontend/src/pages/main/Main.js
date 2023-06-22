@@ -1,51 +1,26 @@
-import { useEffect } from 'react'
-import { useCollectionsContext } from '../../hooks/useCollectionsContext'
-import { useAuthContext } from '../../hooks/useAuthContext'
-import styles from './Main.module.css'
-
-import CollectionDetails from '../../components/Collections/CollectionDetails'
-import CollectionForm from '../../components/Collections/CollectionForm'
+import { useState } from 'react'
+import Collections from '../collections/Collections'
+import Entries from '../Entries'
+import Bingo from '../Bingo'
 
 const Main = () => {
-    const {collections, dispatch} = useCollectionsContext()
-    const {user} = useAuthContext()
+    const [collectionsView, setCollectionsView] = useState(true)
+    const [cardView, setCardView] = useState(false)
 
-    useEffect(() => {
-        const fetchCollections = async () => {
-            const response = await fetch('/api/collections', {
-                headers: {
-                    'Authorization': `Bearer ${user.token}`
-                }
-            })
-            const json = await response.json()
-            console.log(json)
-
-            if (response.ok) {
-                dispatch({type: 'SET_COLLECTIONS', payload: json})
-            }
-        }
-
-        if (user) {
-            fetchCollections()
-        }
-        
-    }, [dispatch, user])
-
-
+    const toggle = () => {
+        setCollectionsView(!collectionsView)
+    }
+    const card = () => {
+        setCardView(!cardView)
+    }
     return (
-        <div className={styles.container}>
-            <h2>Collections:</h2>
-            <div className={styles.collections}>
-                <div>
-                    <CollectionForm />
-                </div>
-                <div className={styles.details}>
-                    {collections && collections.map((collection) => (
-                            <CollectionDetails key={collection._id} collection={collection} />
-                        ))}
-                </div>
+        <div>
+            {!cardView && <div>
+                {collectionsView && <Collections toggle={toggle}/>}
+                {!collectionsView && <Entries toggle={toggle} card={card}/>}
             </div>
-            
+            }
+            {cardView && <Bingo card={card}/>}
         </div>
     )
 }

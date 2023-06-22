@@ -6,7 +6,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import BingoDetails from '../components/BingoDetails'
 import BingoForm from '../components/BingoForm'
 
-const Entries = () => {
+const Entries = ({toggle, card}) => {
     const {bingos, dispatch} = useBingosContext()
     const {user} = useAuthContext()
 
@@ -36,7 +36,12 @@ const Entries = () => {
 
     return (
         <div className="home">
-            <BingoForm className="form" />
+            <div>
+                <BingoForm className="form"/>
+                <button onClick={toggle}>Back to Collections</button>
+                <button onClick={card}>Create a Card</button>
+            </div>
+            
             <div className="workouts">
                 {bingos && bingos.map((bingo) => (
                     <BingoDetails key={bingo._id} bingo={bingo} />

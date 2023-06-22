@@ -6,7 +6,7 @@ import BingoCell from '../components/BingoCell'
 import { jsPDF } from "jspdf";
 
 
-const Bingo = () => {
+const Bingo = ({card}) => {
     const {bingos, dispatch} = useBingosContext()
     const {user} = useAuthContext()
     const [numbers, setNumbers] = useState([])
@@ -133,6 +133,7 @@ const Bingo = () => {
                 {/* <button onClick={handleClick}>Get bingo details</button> */}
                 <button onClick={createCard}>Create card</button>
                 <button onClick={downloadCard}>Download card</button>
+                <button onClick={card}>Back to Entries</button>
                 {/* <button onClick={reset}>Reset random numbers to empty array</button>
                 <button onClick={reveal}>Reveal array of numbers</button> */}
             </div>

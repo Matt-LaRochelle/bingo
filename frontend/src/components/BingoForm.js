@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useBingosContext } from "../hooks/useBingosContext"
 import { useAuthContext } from '../hooks/useAuthContext'
 
-const BingoForm = () => {
+const BingoForm = ({toggle}) => {
     const { dispatch } = useBingosContext()
     const { user } = useAuthContext()
 
@@ -45,7 +45,7 @@ const BingoForm = () => {
 
     return (
         <form className="create" onSubmit={handleSubmit}>
-            <h3>Add a New Bingo Entry</h3>
+            <h3 onClick={toggle} >Add a New Bingo Entry</h3>
 
             <label>Entry:</label>
             <input

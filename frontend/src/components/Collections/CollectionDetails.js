@@ -3,15 +3,9 @@ import { Link } from 'react-router-dom'
 import { useCollectionsContext } from "../../hooks/useCollectionsContext"
 import { useAuthContext } from '../../hooks/useAuthContext'
 
-const CollectionDetails = ({ collection }) => {
+const CollectionDetails = ({ collection, toggle }) => {
     const { dispatch } = useCollectionsContext()
     const { user } = useAuthContext()
-
-
-    // Render current collection
-    const chooseCollection = () => {
-        console.log("You clicked me!")
-    }
 
     // Deletes the current collection
     const handleClick = async () => {
@@ -34,7 +28,7 @@ const CollectionDetails = ({ collection }) => {
     return (
         <div className={styles.container}>
             <h2>{collection.title}</h2>
-            <button onClick={chooseCollection}><Link to="/entries"><p>Chose Collection</p></Link></button>
+            <button onClick={toggle}>Chose Collection</button>
             <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
         </div>
     )
