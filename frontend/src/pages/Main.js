@@ -6,9 +6,6 @@ const Main = () => {
         <div className="main-container">
             <h2>Collections:</h2>
             <div>
-                <CollectionDetails />
-                <CollectionForm />
-                <CollectionForm />
                 <CollectionForm />
             </div>
         </div>

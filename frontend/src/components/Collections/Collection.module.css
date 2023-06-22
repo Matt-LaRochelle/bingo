@@ -3,6 +3,7 @@
     max-width: 250px;
     height: 250px;
     position: relative;
+    padding: 20px;
 }
 
 .container h2 {

@@ -24,7 +24,7 @@ const CollectionForm = () => {
 
         const collection = {title}
 
-        const response = await fetch('/api/bingos', {
+        const response = await fetch('/api/collections', {
             method: 'POST',
             body: JSON.stringify(collection),
             headers: {
@@ -52,7 +52,8 @@ const CollectionForm = () => {
             <form onSubmit={handleSubmit}>
                 <label>Title</label>
                 <input value={title} onChange={handleChange}></input>
-                <button>Create Collection</button>
+                {error && <div className="error">{error}</div>}
+                <button className={emptyFields && emptyFields.includes('title') ? 'error' : ''}>Create Collection</button>
             </form>
         </div>
     )
