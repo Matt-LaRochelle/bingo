@@ -5,16 +5,18 @@
     position: relative;
     padding: 20px;
 }
-
 .container h2 {
     text-align: center;
 }
-
-
-
 .container button {
     position: absolute;
     bottom: 50px;
     left: 50%;
     transform: translate(-50%, 0);
+}
+.container span {
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }
