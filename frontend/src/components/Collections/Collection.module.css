@@ -1,9 +1,12 @@
 .container {
     border: 2px solid red;
+    border-radius: 4px;
     max-width: 250px;
     height: 250px;
     position: relative;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
 }
 .container h2 {
     text-align: center;

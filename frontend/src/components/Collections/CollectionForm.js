@@ -1,19 +1,15 @@
 import styles from './Collection.module.css'
 import { useState } from 'react'
-import { useBingosContext } from "../../hooks/useBingosContext"
+import { useCollectionsContext } from "../../hooks/useCollectionsContext"
 import { useAuthContext } from '../../hooks/useAuthContext'
 
 const CollectionForm = () => {
-    const { dispatch } = useBingosContext()
+    const { dispatch } = useCollectionsContext()
     const { user } = useAuthContext()
 
     const [title, setTitle] = useState('')
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
-
-    const handleChange = (e) => {
-        setTitle(e.target.value)
-    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -43,7 +39,7 @@ const CollectionForm = () => {
             setError(null)
             setEmptyFields([])
             console.log('new collection added', json)
-            // dispatch({type: 'CREATE_BINGO', payload: json})
+            dispatch({type: 'CREATE_COLLECTION', payload: json})
         }
     }
 
@@ -51,7 +47,10 @@ const CollectionForm = () => {
         <div className={styles.container}>
             <form onSubmit={handleSubmit}>
                 <label>Title</label>
-                <input value={title} onChange={handleChange}></input>
+                <input 
+                    value={title} 
+                    onChange={(e) => setTitle(e.target.value)}
+                    ></input>
                 {error && <div className="error">{error}</div>}
                 <button className={emptyFields && emptyFields.includes('title') ? 'error' : ''}>Create Collection</button>
             </form>

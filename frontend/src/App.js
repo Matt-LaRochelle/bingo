@@ -4,7 +4,7 @@ import { useAuthContext } from './hooks/useAuthContext'
 // pages & components
 import Home from './pages/Home'
 import Bingo from './pages/Bingo'
-import Main from './pages/Main'
+import Main from './pages/main/Main'
 import Navbar from './components/Navbar'
 import Login from './pages/Login'
 import Signup from './pages/Signup'

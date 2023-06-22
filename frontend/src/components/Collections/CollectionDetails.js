@@ -6,6 +6,13 @@ const CollectionDetails = ({ collection }) => {
     const { dispatch } = useCollectionsContext()
     const { user } = useAuthContext()
 
+
+    // Render current collection
+    const chooseCollection = () => {
+        console.log("You clicked me!")
+    }
+    
+    // Deletes the current collection
     const handleClick = async () => {
         if (!user) {
             return
@@ -26,7 +33,7 @@ const CollectionDetails = ({ collection }) => {
     return (
         <div className={styles.container}>
             <h2>{collection.title}</h2>
-            <button>Choose Collection</button>
+            <button onClick={chooseCollection}>Choose Collection</button>
             <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
         </div>
     )

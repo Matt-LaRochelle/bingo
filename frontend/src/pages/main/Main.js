@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
-import { useCollectionsContext } from '../hooks/useCollectionsContext'
-import { useAuthContext } from '../hooks/useAuthContext'
+import { useCollectionsContext } from '../../hooks/useCollectionsContext'
+import { useAuthContext } from '../../hooks/useAuthContext'
+import styles from './Main.module.css'
 
-import CollectionDetails from '../components/Collections/CollectionDetails'
-import CollectionForm from '../components/Collections/CollectionForm'
+import CollectionDetails from '../../components/Collections/CollectionDetails'
+import CollectionForm from '../../components/Collections/CollectionForm'
 
 const Main = () => {
     const {collections, dispatch} = useCollectionsContext()
@@ -32,18 +33,19 @@ const Main = () => {
 
 
     return (
-        <div className="main-container">
+        <div className={styles.container}>
             <h2>Collections:</h2>
-            <div>
-                <CollectionForm />
+            <div className={styles.collections}>
+                <div>
+                    <CollectionForm />
+                </div>
+                <div className={styles.details}>
+                    {collections && collections.map((collection) => (
+                            <CollectionDetails key={collection._id} collection={collection} />
+                        ))}
+                </div>
             </div>
-            <div>
-            Hello??
-            {collections && collections[0].title}
-                {collections && collections.map((collection) => (
-                        <CollectionDetails key={collection._id} collection={collection} />
-                    ))}
-            </div>
+            
         </div>
     )
 }
