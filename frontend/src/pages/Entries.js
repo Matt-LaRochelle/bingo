@@ -6,7 +6,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import BingoDetails from '../components/BingoDetails'
 import BingoForm from '../components/BingoForm'
 
-const Home = () => {
+const Entries = () => {
     const {bingos, dispatch} = useBingosContext()
     const {user} = useAuthContext()
 
@@ -42,9 +42,8 @@ const Home = () => {
                     <BingoDetails key={bingo._id} bingo={bingo} />
                 ))}
             </div>
-            {/* <button onClick={handleClick}>Get bingo details</button> */}
         </div>
     )
 }
 
-export default Home;
+export default Entries;

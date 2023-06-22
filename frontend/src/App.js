@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
 
 // pages & components
-import Home from './pages/Home'
+import Entries from './pages/Entries'
 import Bingo from './pages/Bingo'
 import Main from './pages/main/Main'
 import Navbar from './components/Navbar'
@@ -20,15 +20,15 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={user ? <Home /> : <Navigate to="/login" />}
+              element={user ? <Main /> : <Navigate to="/login" />}
             />
             <Route
               path="/bingo"
               element={user ? <Bingo /> : <Navigate to="/login" />}
             />
             <Route
-              path="/main"
-              element={user ? <Main /> : <Navigate to="/login" />}
+              path="/entries"
+              element={user ? <Entries /> : <Navigate to="/login" />}
             />
             <Route
               path="/login"

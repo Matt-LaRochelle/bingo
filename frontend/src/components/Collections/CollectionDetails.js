@@ -1,4 +1,5 @@
 import styles from './Collection.module.css'
+import { Link } from 'react-router-dom'
 import { useCollectionsContext } from "../../hooks/useCollectionsContext"
 import { useAuthContext } from '../../hooks/useAuthContext'
 
@@ -11,7 +12,7 @@ const CollectionDetails = ({ collection }) => {
     const chooseCollection = () => {
         console.log("You clicked me!")
     }
-    
+
     // Deletes the current collection
     const handleClick = async () => {
         if (!user) {
@@ -33,7 +34,7 @@ const CollectionDetails = ({ collection }) => {
     return (
         <div className={styles.container}>
             <h2>{collection.title}</h2>
-            <button onClick={chooseCollection}>Choose Collection</button>
+            <button onClick={chooseCollection}><Link to="/entries"><p>Chose Collection</p></Link></button>
             <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
         </div>
     )
