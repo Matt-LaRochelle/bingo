@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useCollectionsContext } from '../../hooks/useCollectionsContext'
 import { useAuthContext } from '../../hooks/useAuthContext'
-import { usePageContext } from '../../hooks/usePageContext'
 import styles from './Collections.module.css'
 
 import CollectionDetails from './components/CollectionDetails'
@@ -9,6 +8,7 @@ import CollectionForm from './components/CollectionForm'
 
 const Collections = () => {
     const {collections, dispatch} = useCollectionsContext()
+
     const {user} = useAuthContext()
 
     useEffect(() => {

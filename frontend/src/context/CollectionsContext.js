@@ -5,8 +5,13 @@ export const CollectionsContext = createContext()
 export const collectionReducer = (state, action) => {
     switch (action.type) {
         case 'SET_COLLECTIONS':
+            console.log(action.payload)
             return {
                 collections: action.payload
+            }
+        case 'SET_COLLECTION':
+            return {
+                collections: state.collections.filter((c) => c._id === action.payload._id)
             }
         case 'CREATE_COLLECTION':
             return {

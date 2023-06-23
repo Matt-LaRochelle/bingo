@@ -11,7 +11,8 @@ const CollectionDetails = ({ collection, toggle }) => {
 
     const chooseCollection = () => {
         console.log(collection._id)
-        pageDispatch({type: 'entries'})
+        dispatch({type: 'SET_COLLECTION', payload: collection})
+        pageDispatch({type: 'ENTRIES'})
     }
 
     // Deletes the current collection
@@ -26,6 +27,7 @@ const CollectionDetails = ({ collection, toggle }) => {
             }
         })
         const json = await response.json()
+        console.log("delete what?: ", json)
 
         if (response.ok) {
             dispatch({type: 'DELETE_COLLECTION', payload: json})

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { usePageContext } from '../../hooks/usePageContext'
 import { useBingosContext } from '../../hooks/useBingosContext'
 import { useAuthContext } from '../../hooks/useAuthContext'
 
@@ -6,8 +7,9 @@ import BingoCell from './components/BingoCell'
 import { jsPDF } from "jspdf";
 
 
-const Bingo = ({card}) => {
+const Bingo = () => {
     const {bingos, dispatch} = useBingosContext()
+    const {dispatch: pageDispatch} = usePageContext()
     const {user} = useAuthContext()
     const [numbers, setNumbers] = useState([])
     const [newBingos, setNewBingos] = useState(null)
@@ -124,6 +126,11 @@ const Bingo = ({card}) => {
         doc.cell(159, 183, 35, 35, newBingos[24].entry)
         doc.save("a4.pdf");
     }
+
+    //Navigate back to the entries page
+    const navToEntries = () => {
+        pageDispatch({type: 'ENTRIES'})
+    }
     
 
     return (
@@ -133,7 +140,7 @@ const Bingo = ({card}) => {
                 {/* <button onClick={handleClick}>Get bingo details</button> */}
                 <button onClick={createCard}>Create card</button>
                 <button onClick={downloadCard}>Download card</button>
-                <button onClick={card}>Back to Entries</button>
+                <button onClick={navToEntries}>Back to Entries</button>
                 {/* <button onClick={reset}>Reset random numbers to empty array</button>
                 <button onClick={reveal}>Reveal array of numbers</button> */}
             </div>

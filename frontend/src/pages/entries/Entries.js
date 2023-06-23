@@ -10,8 +10,8 @@ import EntryDetails from './components/EntryDetails'
 import EntryForm from './components/EntryForm'
 
 const Entries = () => {
-    const {collections, dispatch: collectionsDispatch} = useCollectionsContext()
-    const {page, dispatch: pageDispatch} = usePageContext()
+    const {collections} = useCollectionsContext()
+    const {dispatch: pageDispatch} = usePageContext()
     const {bingos, dispatch} = useBingosContext()
     const {user} = useAuthContext()
 
@@ -37,22 +37,27 @@ const Entries = () => {
 
     const pageSwitch = (e) => {
         if (e.target.id === 'collection') {
-            pageDispatch({type: 'collections', payload: 'collections'})
+            pageDispatch({type: 'COLLECTIONS'})
         }
         if (e.target.id === 'bingo') {
-            pageDispatch({type: 'bingo', payload: 'bingo'})
+            pageDispatch({type: 'BINGO'})
         }
+    }
+
+    const checkCollections = () => {
+        console.log(collections)
     }
 
     return (
         <div>
-            <h1>Collection title:</h1>
+            <h1>Collection title: {collections && collections[0].title}</h1>
             <div className="home">
                 <div>
                     <EntryForm className="form"/>
                     <div className={styles.pageButtons}>
                         <button id="collection" onClick={pageSwitch}>Back to Collections</button>
                         <button id="bingo" onClick={pageSwitch}>Create a Card</button>
+                        <button onClick={checkCollections}>Check collections</button>
                     </div>
                     
                 </div>
