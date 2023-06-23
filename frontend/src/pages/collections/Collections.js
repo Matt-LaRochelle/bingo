@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
 import { useCollectionsContext } from '../../hooks/useCollectionsContext'
 import { useAuthContext } from '../../hooks/useAuthContext'
+import { usePageContext } from '../../hooks/usePageContext'
 import styles from './Collections.module.css'
 
 import CollectionDetails from './components/CollectionDetails'
 import CollectionForm from './components/CollectionForm'
 
-const Collections = ({toggle}) => {
+const Collections = () => {
     const {collections, dispatch} = useCollectionsContext()
     const {user} = useAuthContext()
 
@@ -41,7 +42,7 @@ const Collections = ({toggle}) => {
                 </div>
                 <div className={styles.details}>
                     {collections && collections.map((collection) => (
-                            <CollectionDetails key={collection._id} toggle={toggle} collection={collection} />
+                            <CollectionDetails key={collection._id} collection={collection} />
                         ))}
                 </div>
             </div>
