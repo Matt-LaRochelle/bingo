@@ -10,18 +10,21 @@ const getBingos = async (req, res) => {
     res.status(200).json(bingos)
 }
 
-// get a single bingo
+// get a collection of bingos
 const getBingo = async (req, res) => {
-    const { id } = req.params
+    const { id: collection_id } = req.params
 
+    console.log(collection_id)
     // checks if id is not a valid mongoose string
-    if (!mongoose.Types.ObjectId.isValid(id)) {
+    if (!mongoose.Types.ObjectId.isValid(collection_id)) {
+        console.log("stopped step 1")
         return res.status(404).json({error: 'No such bingo.'})
     }
 
-    const bingo = await Bingo.findById(id)
+    const bingo = await Bingo.find({ collection_id: collection_id }).sort({createdAt: -1})
 
     if (!bingo) {
+        console.log("stopped step 2")
         return res.status(404).json({error: 'No such bingo.'})
     }
 
@@ -31,7 +34,7 @@ const getBingo = async (req, res) => {
 
 // create a new bingo
 const createBingo = async (req, res) => {
-    const {entry} = req.body
+    const {entry, collection_id} = req.body
 
     let emptyFields = []
 
@@ -48,7 +51,7 @@ const createBingo = async (req, res) => {
     // add doc to db
     try {
       const user_id = req.user._id
-      const bingo = await Bingo.create({entry, user_id})
+      const bingo = await Bingo.create({entry, collection_id, user_id})
       res.status(200).json(bingo)
     } catch (error) {
       res.status(400).json({error: error.message})

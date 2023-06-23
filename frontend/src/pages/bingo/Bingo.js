@@ -17,25 +17,25 @@ const Bingo = () => {
     const [error, setError] = useState(null);
 
     // Get bingo entry information
-    useEffect(() => {
-        const fetchBingos = async () => {
-            const response = await fetch('/api/bingos', {
-                headers: {
-                    'Authorization': `Bearer ${user.token}`
-                }
-            })
-            const json = await response.json()
+    // useEffect(() => {
+    //     const fetchBingos = async () => {
+    //         const response = await fetch('/api/bingos', {
+    //             headers: {
+    //                 'Authorization': `Bearer ${user.token}`
+    //             }
+    //         })
+    //         const json = await response.json()
 
-            if (response.ok) {
-                dispatch({type: 'SET_BINGOS', payload: json})
-            }
-        }
+    //         if (response.ok) {
+    //             dispatch({type: 'SET_BINGOS', payload: json})
+    //         }
+    //     }
 
-        if (user) {
-            fetchBingos()
-        }
+    //     if (user) {
+    //         fetchBingos()
+    //     }
         
-    }, [dispatch, user, newBingos])
+    // }, [dispatch, user, newBingos])
 
     // Make sure title doesn't get too large
     useEffect(() => {

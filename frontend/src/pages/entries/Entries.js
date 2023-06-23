@@ -17,7 +17,10 @@ const Entries = () => {
 
     useEffect(() => {
         const fetchBingos = async () => {
-            const response = await fetch('/api/bingos', {
+
+            const collection_id = collections[0]._id
+
+            const response = await fetch('/api/bingos/' + collection_id, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

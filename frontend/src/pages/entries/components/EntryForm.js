@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { useBingosContext } from "../../../hooks/useBingosContext"
 import { useAuthContext } from '../../../hooks/useAuthContext'
+import { useCollectionsContext } from '../../../hooks/useCollectionsContext'
 
-const EntryForm = ({toggle}) => {
+const EntryForm = () => {
     const { dispatch } = useBingosContext()
     const { user } = useAuthContext()
+    const {collections} = useCollectionsContext()
 
     const [entry, setEntry] = useState('')
     const [error, setError] = useState(null)
@@ -18,7 +20,9 @@ const EntryForm = ({toggle}) => {
             return
         }
 
-        const bingo = {entry}
+        const collection_id = collections[0]._id;
+
+        const bingo = {entry, collection_id}
 
         const response = await fetch('/api/bingos', {
             method: 'POST',
@@ -45,8 +49,8 @@ const EntryForm = ({toggle}) => {
 
     return (
         <form className="create" onSubmit={handleSubmit}>
-            <h3 onClick={toggle} >Add a New Bingo Entry</h3>
-
+            <h3>Add a New Bingo Entry</h3>
+                {collections && collections[0]._id}
             <label>Entry:</label>
             <input
                 type="text"

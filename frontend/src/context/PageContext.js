@@ -23,7 +23,7 @@ export const pageReducer = (state, action) => {
 
 export const PageContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(pageReducer, {
-        page: 'bingo'
+        page: 'collections'
     })
 
     return (
