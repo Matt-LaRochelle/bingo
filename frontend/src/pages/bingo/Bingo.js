@@ -1,41 +1,18 @@
 import { useState, useEffect } from 'react'
 import { usePageContext } from '../../hooks/usePageContext'
 import { useBingosContext } from '../../hooks/useBingosContext'
-import { useAuthContext } from '../../hooks/useAuthContext'
 
 import BingoCell from './components/BingoCell'
 import { jsPDF } from "jspdf";
 
 
 const Bingo = () => {
-    const {bingos, dispatch} = useBingosContext()
+    const {bingos} = useBingosContext()
     const {dispatch: pageDispatch} = usePageContext()
-    const {user} = useAuthContext()
     const [numbers, setNumbers] = useState([])
     const [newBingos, setNewBingos] = useState(null)
     const [title, setTitle] = useState('Choose a title:')
     const [error, setError] = useState(null);
-
-    // Get bingo entry information
-    // useEffect(() => {
-    //     const fetchBingos = async () => {
-    //         const response = await fetch('/api/bingos', {
-    //             headers: {
-    //                 'Authorization': `Bearer ${user.token}`
-    //             }
-    //         })
-    //         const json = await response.json()
-
-    //         if (response.ok) {
-    //             dispatch({type: 'SET_BINGOS', payload: json})
-    //         }
-    //     }
-
-    //     if (user) {
-    //         fetchBingos()
-    //     }
-        
-    // }, [dispatch, user, newBingos])
 
     // Make sure title doesn't get too large
     useEffect(() => {
@@ -137,12 +114,9 @@ const Bingo = () => {
         <div className="create-bingo">
         {error && <div className="error">{error}</div>}
             <div className="bingo-buttons">
-                {/* <button onClick={handleClick}>Get bingo details</button> */}
                 <button onClick={createCard}>Create card</button>
                 <button onClick={downloadCard}>Download card</button>
                 <button onClick={navToEntries}>Back to Entries</button>
-                {/* <button onClick={reset}>Reset random numbers to empty array</button>
-                <button onClick={reveal}>Reveal array of numbers</button> */}
             </div>
             <input className="title" type="text" placeholder='Title:' value={title} onChange={handleChange}></input>
             <h2>{title}</h2>

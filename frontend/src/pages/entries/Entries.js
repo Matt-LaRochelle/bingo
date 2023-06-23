@@ -47,10 +47,6 @@ const Entries = () => {
         }
     }
 
-    const checkCollections = () => {
-        console.log(collections)
-    }
-
     return (
         <div>
             <h1>Collection title: {collections && collections[0].title}</h1>
@@ -60,7 +56,6 @@ const Entries = () => {
                     <div className={styles.pageButtons}>
                         <button id="collection" onClick={pageSwitch}>Back to Collections</button>
                         <button id="bingo" onClick={pageSwitch}>Create a Card</button>
-                        <button onClick={checkCollections}>Check collections</button>
                     </div>
                     
                 </div>
