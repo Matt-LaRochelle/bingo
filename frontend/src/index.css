@@ -84,7 +84,7 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
-form button {
+.form-button {
   background: var(--primary);
   border: 0;
   color: #fff;
@@ -115,6 +115,18 @@ input.error {
   width: 200px;
   display: block;
   margin: 20px auto;
+}
+.bingo-title {
+  position: relative;
+}
+.bingo-title span {
+  vertical-align: -4px;
+  margin-left: 10px;
+}
+.bingo-title span:hover {
+  border: 2px solid var(--primary);
+  border-radius: 100%;
+  cursor: pointer;
 }
 .bingo-buttons {
   display: flex;
@@ -147,8 +159,14 @@ input.error {
 .bingo-cell h4 {
   margin: 2px;
 }
+.hide {
+  display: none;
+}
 
 /* navbar */
+nav span {
+  margin-right: 10px;
+}
 .nav-links {
   display: flex;
   align-items: center;
@@ -157,7 +175,7 @@ input.error {
   margin: 0 10px;
 }
 
-nav button {
+.nav-button {
   background: #fff;
   color: var(--primary);
   border: 2px solid var(--primary);
@@ -166,10 +184,6 @@ nav button {
   font-family: "Poppins";
   cursor: pointer;
   font-size: 1em;
-  margin-left: 10px;
-}
-.nav-hamburger {
-  display: none;
 }
 .login-links {
   width: 130px;
@@ -200,38 +214,6 @@ form.signup, form.login {
     height: 80px;
     width: 80px;
     font-size: .48rem;
-  }
-  .nav-hamburger {
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    right: 2rem;
-    top: 2.8rem;
-    z-index: 20;
-  }
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    position: fixed;
-    left: -100%;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #f0f0f0;
-    z-index: 10;
-    transition: left 1s;
-  }
-  .nav-links p, .nav-links span, .nav-links button {
-    text-align: center;
-    display: block;
-    margin: 20px auto;
-  }
-  .nav-active {
-    left: 0;
   }
 }
 @media screen and (max-width: 400px) {

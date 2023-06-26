@@ -50,8 +50,6 @@ const EntryForm = () => {
     return (
         <form className="create" onSubmit={handleSubmit}>
             <h3>Add a New Bingo Entry</h3>
-                {collections && collections[0]._id}
-            <label>Entry:</label>
             <input
                 type="text"
                 onChange={(e) => setEntry(e.target.value)}
@@ -59,7 +57,7 @@ const EntryForm = () => {
                 className={emptyFields && emptyFields.includes('entry') ? 'error' : ''}
             />
 
-            <button>Add Entry</button>
+            <button className="form-button">Add Entry</button>
             {error && <div className="error">{error}</div>}
         </form>
     )

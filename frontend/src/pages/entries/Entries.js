@@ -48,22 +48,19 @@ const Entries = () => {
     }
 
     return (
-        <div>
-            <h1>Collection title: {collections && collections[0].title}</h1>
-            <div className="home">
-                <div>
-                    <EntryForm className="form"/>
-                    <div className={styles.pageButtons}>
-                        <button id="collection" onClick={pageSwitch}>Back to Collections</button>
-                        <button id="bingo" onClick={pageSwitch}>Create a Card</button>
-                    </div>
-                    
-                </div>
-                <div className="workouts">
-                    {bingos && bingos.map((bingo) => (
-                        <EntryDetails key={bingo._id} bingo={bingo} />
-                    ))}
-                </div>
+        <div className="home">
+            <div className={styles.pageButtons}>
+                <button className="nav-button" id="collection" onClick={pageSwitch}>Back</button>
+                <button className="nav-button" id="bingo" onClick={pageSwitch}>Next</button>
+            </div>
+            <h1>{collections && collections[0].title}</h1>
+            <div>
+                <EntryForm className="form"/>
+            </div>
+            <div className="workouts">
+                {bingos && bingos.map((bingo) => (
+                    <EntryDetails key={bingo._id} bingo={bingo} />
+                ))}
             </div>
         </div>
     )

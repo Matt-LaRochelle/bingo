@@ -20,7 +20,7 @@ const Navbar = () => {
                         <div>
                             <div>
                                 <span>{user.email}</span>
-                                <button onClick={handleClick}>Log out</button>
+                                <button className="nav-button" onClick={handleClick}>Log out</button>
                             </div>
                         </div>
                     )}

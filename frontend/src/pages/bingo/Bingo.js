@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { usePageContext } from '../../hooks/usePageContext'
 import { useBingosContext } from '../../hooks/useBingosContext'
+import { useCollectionsContext } from '../../hooks/useCollectionsContext'
 
 import BingoCell from './components/BingoCell'
 import { jsPDF } from "jspdf";
@@ -9,10 +10,12 @@ import { jsPDF } from "jspdf";
 const Bingo = () => {
     const {bingos} = useBingosContext()
     const {dispatch: pageDispatch} = usePageContext()
+    const {collections} = useCollectionsContext()
     const [numbers, setNumbers] = useState([])
     const [newBingos, setNewBingos] = useState(null)
-    const [title, setTitle] = useState('Choose a title:')
+    const [title, setTitle] = useState(collections[0].title)
     const [error, setError] = useState(null);
+    const [editTheTitle, setEditTheTitle] = useState(false)
 
     // Make sure title doesn't get too large
     useEffect(() => {
@@ -108,18 +111,28 @@ const Bingo = () => {
     const navToEntries = () => {
         pageDispatch({type: 'ENTRIES'})
     }
+
+    const editTitle = () => {
+        setEditTheTitle(!editTheTitle)
+    }
     
 
     return (
         <div className="create-bingo">
         {error && <div className="error">{error}</div>}
             <div className="bingo-buttons">
-                <button onClick={createCard}>Create card</button>
-                <button onClick={downloadCard}>Download card</button>
-                <button onClick={navToEntries}>Back to Entries</button>
+                <button className="form-button" onClick={createCard}>Create card</button>
+                <button className="form-button" onClick={downloadCard}>Download card</button>
+                <button className="nav-button"onClick={navToEntries}>Back</button>
             </div>
-            <input className="title" type="text" placeholder='Title:' value={title} onChange={handleChange}></input>
-            <h2>{title}</h2>
+            <input className={ editTheTitle ? "title": "hide" } type="text" placeholder='Title:' value={title} onChange={handleChange}></input>
+            <div className="bingo-title">
+                <h2>{title}<span onClick={editTitle} class="material-symbols-outlined">
+                        edit
+                    </span></h2>
+                    
+            </div>
+            
             <div className="bingo">
                 {newBingos && newBingos.map((newBingo) => (
                     <BingoCell bingo={newBingo}>{newBingo.entry}</BingoCell>

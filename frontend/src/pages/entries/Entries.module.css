@@ -1,7 +1,10 @@
 .pageButtons {
-    height: 100px;
+    display: flex;
+    justify-content: space-around;
 }
+
 .pageButtons button {
     display: block;
-    margin: 20px 0;
+    height: 40px;
+    margin-top: 23px;
 }

@@ -37,7 +37,7 @@ const CollectionDetails = ({ collection, toggle }) => {
     return (
         <div className={styles.container}>
             <h2>{collection.title}</h2>
-            <button onClick={chooseCollection}>Choose Collection</button>
+            <button className="nav-button" onClick={chooseCollection}>Choose Collection</button>
             <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
         </div>
     )
