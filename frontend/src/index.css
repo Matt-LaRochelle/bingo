@@ -211,7 +211,7 @@ form.signup, form.login {
 }
 
 @media screen and (max-width: 956px) {
-  .home {
+  .entry-container {
     grid-template-columns: repeat(1, 1fr);
   }
 }
