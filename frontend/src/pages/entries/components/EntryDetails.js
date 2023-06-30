@@ -12,7 +12,7 @@ const EntryDetails = ({ bingo }) => {
         if (!user) {
             return
         }
-        const response = await fetch('/api/bingos/' + bingo._id, {
+        const response = await fetch('https://bingo-api.onrender.com/api/bingos/' + bingo._id, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${user.token}`

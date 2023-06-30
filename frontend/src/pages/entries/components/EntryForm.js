@@ -24,7 +24,7 @@ const EntryForm = () => {
 
         const bingo = {entry, collection_id}
 
-        const response = await fetch('/api/bingos', {
+        const response = await fetch('https://bingo-api.onrender.com/api/bingos', {
             method: 'POST',
             body: JSON.stringify(bingo),
             headers: {

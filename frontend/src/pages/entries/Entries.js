@@ -20,7 +20,7 @@ const Entries = () => {
 
             const collection_id = collections[0]._id
 
-            const response = await fetch('/api/bingos/' + collection_id, {
+            const response = await fetch('https://bingo-api.onrender.com/api/bingos/' + collection_id, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

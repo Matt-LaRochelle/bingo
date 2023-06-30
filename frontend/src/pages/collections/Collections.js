@@ -13,7 +13,7 @@ const Collections = () => {
 
     useEffect(() => {
         const fetchCollections = async () => {
-            const response = await fetch('/api/collections', {
+            const response = await fetch('https://bingo-api.onrender.com/api/collections', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

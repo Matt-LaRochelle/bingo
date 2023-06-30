@@ -20,7 +20,7 @@ const CollectionForm = () => {
 
         const collection = {title}
 
-        const response = await fetch('/api/collections', {
+        const response = await fetch('https://bingo-api.onrender.com/api/collections', {
             method: 'POST',
             body: JSON.stringify(collection),
             headers: {

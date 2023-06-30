@@ -10,7 +10,7 @@ const Forgot = () => {
     const handleForgotSubmit = async (e) => {
         e.preventDefault()
         setIsLoading(true)
-        const response = await fetch('https://guitar-paths-api.onrender.com/api/user/forgot', {
+        const response = await fetch('https://bingo-api.onrender.com/api/user/forgot', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email: email})

@@ -20,7 +20,7 @@ const CollectionDetails = ({ collection, toggle }) => {
         if (!user) {
             return
         }
-        const response = await fetch('/api/collections/' + collection._id, {
+        const response = await fetch('https://bingo-api.onrender.com/api/collections/' + collection._id, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${user.token}`

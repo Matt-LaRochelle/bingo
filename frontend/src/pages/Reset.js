@@ -16,7 +16,7 @@ function ResetPassword() {
     const checkToken = async () => {
       // Check token with backend
       if (token) {
-        const response = await fetch('https://guitar-paths-api.onrender.com/api/user/verify', {
+        const response = await fetch('https://bingo-api.onrender.com/api/user/verify', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({token: token})
@@ -42,7 +42,7 @@ function ResetPassword() {
     setIsLoading(true)
     // TODO: Send password reset request to server
     if (password === confirmPassword) {
-      const response = await fetch('https://guitar-paths-api.onrender.com/api/user/reset', {
+      const response = await fetch('https://bingo-api.onrender.com/api/user/reset', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ token, password })
