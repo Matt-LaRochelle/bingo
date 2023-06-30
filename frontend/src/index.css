@@ -206,7 +206,7 @@ form.signup, form.login {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 786px) {
   .bingo {
     height: 400px;
     width: 400px;
@@ -224,7 +224,7 @@ form.signup, form.login {
     text-align: end;
   }
 }
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 424px) {
   .bingo {
     height: 250px;
     width: 250px;
