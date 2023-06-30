@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useLogin } from '../hooks/useLogin'
 import { Link } from 'react-router-dom'
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -31,6 +32,12 @@ const Login = () => {
             <p>Forgot your password? <Link to="/forgot">Reset it here</Link></p>
             <button className="form-button" disabled={isLoading}>Log In</button>
             {error && <div className='error'>{error}</div>}
+            {isLoading && 
+                    <div className="loading">
+                        <p>Sending email...</p>
+                        <p>This process tends to take 5-60 seconds</p>
+                        <PacmanLoader color="#1aac83" />
+                    </div>}
         </form>
     )
 }
