@@ -24,7 +24,7 @@ body {
   font-family: "Poppins";
 }
 
-/* Navbar 1*/
+/* Navbar */
 header {
   background: var(--feature)
 }
@@ -39,6 +39,31 @@ header .container {
 header a {
   color: var(--text);
   text-decoration: none;
+}
+nav span {
+  margin-right: 10px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links p {
+  margin: 0 10px;
+}
+.nav-button {
+  background: var(--feature);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+}
+.login-links {
+  width: 130px;
+  display: flex;
+  justify-content: space-around;
 }
 
 /* Main display */
@@ -120,6 +145,15 @@ input.error {
   border: 1px solid var(--error);
 }
 
+/* auth forms */
+form.signup, form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--feature);
+  border-radius: 4px;
+}
+
 /*bingo page */
 .create-bingo {
   text-align: center;
@@ -174,42 +208,6 @@ input.error {
 }
 .hide {
   display: none;
-}
-
-/* navbar 2*/
-nav span {
-  margin-right: 10px;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-.nav-links p {
-  margin: 0 10px;
-}
-.nav-button {
-  background: var(--feature);
-  color: var(--primary);
-  border: 2px solid var(--primary);
-  padding: 6px 10px;
-  border-radius: 4px;
-  font-family: "Poppins";
-  cursor: pointer;
-  font-size: 1em;
-}
-.login-links {
-  width: 130px;
-  display: flex;
-  justify-content: space-around;
-}
-
-/* auth forms */
-form.signup, form.login {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  background: var(--feature);
-  border-radius: 4px;
 }
 
 @media screen and (max-width: 956px) {
