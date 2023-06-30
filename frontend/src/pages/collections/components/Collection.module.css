@@ -23,8 +23,9 @@
     right: 5px;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 580px) {
     .container {
         margin: auto;
+        width: 90%;
     }
 }
