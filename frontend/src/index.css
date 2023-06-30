@@ -5,17 +5,28 @@
 :root {
   --primary: #1aac83;
   --error: #e7195a;
+  --wall: #f1f1f1;
+  --feature: #fff;
+  --text: #333;
+
+  /* --primary: #04c153;
+  --error: #a30404;
+  --wall: #f9e6e6;
+  --feature: #fcebac;
+  --text: #333; */
 }
 * {
   box-sizing: border-box;
 }
 body {
-  background: #f1f1f1;
+  background: var(--wall);
   margin: 0;
   font-family: "Poppins";
 }
+
+/* Navbar 1*/
 header {
-  background: #fff;
+  background: var(--feature)
 }
 header .container {
   max-width: 1400px;
@@ -26,52 +37,54 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  color: #333;
+  color: var(--text);
   text-decoration: none;
 }
+
+/* Main display */
 .pages{
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
 }
 
-/* homepage */
-.home {
+/* entry page */
+.entry-container {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 50px;
 }
-.workout-details {
-  background: #fff;
+.entry-details {
+  background: var(--feature);
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
-.workout-details h4 {
+.entry-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
   max-width: 93%;
 }
-.workout-details p {
+.entry-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
-.workout-details span {
+.entry-details span {
   position: absolute;
   top: 20px;
   right: 20px;
   cursor: pointer;
-  background: #f1f1f1;
+  background: var(--wall);
   padding: 6px;
   border-radius: 50%;
-  color: #333;
+  color: var(--text);
 }
 
-/* new workout form */
+/* applies to most forms */
 label, input {
   display: block;
 }
@@ -87,7 +100,7 @@ input {
 .form-button {
   background: var(--primary);
   border: 0;
-  color: #fff;
+  color: var(--feature);
   padding: 10px;
   font-family: "Poppins";
   border-radius: 4px;
@@ -142,7 +155,7 @@ input.error {
   /* border: 2px solid lime; */
   justify-content: center;
   justify-self: center;
-  background: #f8f8f8;
+  background: var(--feature);
   box-shadow: 2px 2px 20px rgba(0,0,0,0.5);
   width: 750px;
   height: 750px;
@@ -150,7 +163,7 @@ input.error {
   border: 1px solid black;
 }
 .bingo-cell {
-  border: 1px solid #333;
+  border: 1px solid var(--text);
   height: 150px;
   width: 150px;
   text-align: center;
@@ -163,11 +176,10 @@ input.error {
   display: none;
 }
 
-/* navbar */
+/* navbar 2*/
 nav span {
   margin-right: 10px;
 }
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -175,9 +187,8 @@ nav span {
 .nav-links p {
   margin: 0 10px;
 }
-
 .nav-button {
-  background: #fff;
+  background: var(--feature);
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 6px 10px;
@@ -197,7 +208,7 @@ form.signup, form.login {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
-  background: #fff;
+  background: var(--feature);
   border-radius: 4px;
 }
 

@@ -48,7 +48,7 @@ const Entries = () => {
     }
 
     return (
-        <div className="home">
+        <div className="entry-container">
             <div className={styles.pageButtons}>
                 <button className="nav-button" id="collection" onClick={pageSwitch}>Back</button>
                 <button className="nav-button" id="bingo" onClick={pageSwitch}>Next</button>
