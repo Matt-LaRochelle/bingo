@@ -1,6 +1,6 @@
 .container {
     border-radius: 4px;
-    max-width: 250px;
+    width: 250px;
     height: 250px;
     position: relative;
     padding: 20px;
@@ -21,4 +21,10 @@
     position: absolute;
     bottom: 5px;
     right: 5px;
+}
+
+@media screen and (max-width: 420px) {
+    .container {
+        margin: auto;
+    }
 }
