@@ -34,7 +34,7 @@ const Login = () => {
             {error && <div className='error'>{error}</div>}
             {isLoading && 
                     <div className="loading">
-                        <p>Sending email...</p>
+                        <p>Fetching data from server...</p>
                         <p>This process tends to take 5-60 seconds</p>
                         <PacmanLoader color="#1aac83" />
                     </div>}
