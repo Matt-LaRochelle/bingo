@@ -4,14 +4,14 @@ const mongoose = require('mongoose');
 const userRoutes = require('./routes/user')
 const collectionRoutes = require('./routes/collections')
 const bingoRoutes = require('./routes/bingos');
-
+const cors = require('cors');
 
 // express app
 const app = express();
 
 // middleware
 app.use(express.json())
-
+app.use(cors());
 
 //This right here is the difference between "coder" and "engineer".
 app.use((req, res, next) => {
