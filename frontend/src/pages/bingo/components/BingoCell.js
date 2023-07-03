@@ -1,7 +1,7 @@
 const BingoCell = ({ bingo }) => {
     return (
         <div className="bingo-cell">
-            <h4>{bingo.entry}</h4> 
+            <p>{bingo.entry}</p> 
         </div>
     )
 }
