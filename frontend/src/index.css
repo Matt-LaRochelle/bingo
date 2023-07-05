@@ -9,6 +9,8 @@
   --feature: #fff;
   --text: #333;
 
+  -webkit-text-size-adjust:none;
+
   /* --primary: #04c153;
   --error: #a30404;
   --wall: #f9e6e6;
