@@ -22,6 +22,8 @@ export const AuthContextProvider = ({ children }) => {
         const user = JSON.parse(localStorage.getItem('user'))
 
         if (user) {
+
+            // Log them in... but this doesn't work if the token is 3 days expired...
             dispatch({ type: 'LOGIN', payload: user })
         }
     }, [])
