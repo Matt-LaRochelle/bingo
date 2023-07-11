@@ -9,6 +9,8 @@ import Signup from './pages/Signup'
 import Forgot from './pages/Forgot'
 import ResetPassword from './pages/Reset'
 
+// This is just a test for changing the folder names.
+// I want to see if it affects the way I upload things to github.
 function App() {
   const { user } = useAuthContext()
 
