@@ -21,11 +21,26 @@ export const AuthContextProvider = ({ children }) => {
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'))
 
-        if (user) {
+        const validateUser = async () => {
+            if (user) {
+                // Check if the token is valid or invalid
+                const response = await fetch('https://bingo-api.onrender.com/api/collections', {
+                        headers: {
+                            'Authorization': `Bearer ${user.token}`
+                        }
+                    })
+                    const json = await response.json()
+                    console.log(json)
 
-            // Log them in... but this doesn't work if the token is 3 days expired...
-            dispatch({ type: 'LOGIN', payload: user })
-        }
+                    if (response.ok) {
+                        dispatch({ type: 'LOGIN', payload: user })
+                    }
+                    else {
+                        dispatch({ type: 'LOGOUT', payload: null})
+                    }
+                }
+            }
+        validateUser()
     }, [])
 
     // This is part of the old code and used for debugging
