@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLogin } from '../hooks/useLogin'
 import { Link } from 'react-router-dom'
-import PacmanLoader from "react-spinners/PacmanLoader";
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -36,7 +36,7 @@ const Login = () => {
                     <div className="loading">
                         <p>Fetching data from server...</p>
                         <p>This process tends to take 5-60 seconds</p>
-                        <PacmanLoader color="#1aac83" />
+                        <ClimbingBoxLoader color="#36d7b7" />
                     </div>}
         </form>
     )

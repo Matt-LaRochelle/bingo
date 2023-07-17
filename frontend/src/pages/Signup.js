@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useSignup } from '../hooks/useSignup'
-import PacmanLoader from "react-spinners/PacmanLoader";
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
 const Signup = () => {
     const [email, setEmail] = useState('')
@@ -34,7 +34,7 @@ const Signup = () => {
                     <div className="loading">
                         <p>Fetching data from server...</p>
                         <p>This process tends to take 5-60 seconds</p>
-                        <PacmanLoader color="#1aac83" />
+                        <ClimbingBoxLoader color="#36d7b7" />
                     </div>}
         </form>
     )
