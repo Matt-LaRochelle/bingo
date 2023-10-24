@@ -121,9 +121,9 @@ const Bingo = () => {
         <div className="create-bingo">
         {error && <div className="error">{error}</div>}
             <div className="bingo-buttons">
-                <button className="nav-button"onClick={navToEntries}>Back to entries</button>
-                <button className="form-button" onClick={createCard}>Create card</button>
-                <button className="form-button" onClick={downloadCard}>Download card</button>
+                <button className="nav-button"onClick={navToEntries}>Back to Entries</button>
+                <button className="form-button" onClick={createCard}>Generate Card</button>
+                <button className="form-button" onClick={downloadCard}>Download Card</button>
 
             </div>
             <input className={ editTheTitle ? "title": "hide" } type="text" placeholder='Title:' value={title} onChange={handleChange}></input>
