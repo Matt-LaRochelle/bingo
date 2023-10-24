@@ -121,7 +121,7 @@ const Bingo = () => {
         <div className="create-bingo">
         {error && <div className="error">{error}</div>}
             <div className="bingo-buttons">
-                <button className="nav-button"onClick={navToEntries}>Back to Entries</button>
+                <button className="button" onClick={navToEntries}>Back to Entries</button>
                 <button className="form-button" onClick={createCard}>Generate Card</button>
                 <button className="form-button" onClick={downloadCard}>Download Card</button>
 

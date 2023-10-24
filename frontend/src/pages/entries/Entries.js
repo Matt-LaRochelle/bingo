@@ -50,8 +50,8 @@ const Entries = () => {
     return (
         <div className="entry-container">
             <div className={styles.pageButtons}>
-                <button className="nav-button" id="collection" onClick={pageSwitch}>Back to Collections</button>
-                <button className="nav-button" id="bingo" onClick={pageSwitch}>Generate Bingo Cards</button>
+                <button className={styles.button} id="collection" onClick={pageSwitch}>Back to Collections</button>
+                <button className={styles.button} id="bingo" onClick={pageSwitch}>Generate Bingo Cards</button>
             </div>
             <h1>{collections && collections[0].title}</h1>
             <div>
