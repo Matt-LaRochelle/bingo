@@ -5,6 +5,6 @@
 
 .pageButtons button {
     display: block;
-    height: 40px;
-    margin-top: 23px;
+    /* height: 40px; */
+    margin: 23px 15px;
 }
