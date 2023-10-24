@@ -21,7 +21,7 @@ const Navbar = () => {
                         <div>
                             <div>
                                 <span className="nav-email">{user.email}</span>
-                                <button className="nav-button" onClick={handleClick}>Log out</button>
+                                <button className="nav-button" onClick={handleClick}>Log Out</button>
                             </div>
                         </div>
                     )}
