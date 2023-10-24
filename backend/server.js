@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json())
 app.use(cors());
 
-//This right here is the difference between "coder" and "engineer".
+// log each request for debugging
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
@@ -24,7 +24,6 @@ app.use('/api/user', userRoutes)
 app.use('/api/collections', collectionRoutes)
 app.use('/api/bingos', bingoRoutes)
 
-// lets go
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
