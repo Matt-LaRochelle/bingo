@@ -115,6 +115,9 @@ const Bingo = () => {
     const editTitle = () => {
         setEditTheTitle(!editTheTitle)
     }
+
+
+
     
 
     return (

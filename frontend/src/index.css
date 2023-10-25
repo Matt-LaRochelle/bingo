@@ -167,9 +167,6 @@ form.signup, form.login {
 }
 
 /*bingo page */
-.create-bingo {
-  text-align: center;
-}
 .title {
   width: 200px;
   display: block;
@@ -177,6 +174,7 @@ form.signup, form.login {
 }
 .bingo-title {
   position: relative;
+  text-align: center;
 }
 .bingo-title span {
   vertical-align: -4px;
@@ -196,46 +194,46 @@ form.signup, form.login {
 }
 .bingo {
   display: grid;
+  grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 0;
-  /* border: 2px solid lime; */
-  justify-content: center;
-  justify-self: center;
   background: var(--feature);
   box-shadow: 2px 2px 20px rgba(0,0,0,0.5);
-  width: 750px;
-  height: 750px;
+  width: min(750px, 96vw);
+  height: min(750px, 96vw);
   margin: 0 auto;
-  border: 1px solid black;
+  border-top: 2px solid var(--text);
+  border-left: 2px solid var(--text);
 }
 .bingo-cell {
-  border: 1px solid var(--text);
-  height: 150px;
-  width: 150px;
-  text-align: center;
-  justify-self: center;
+  border-right: 2px solid var(--text);
+  border-bottom: 2px solid var(--text);
+  height: 100%;
+  width: 100%;
+  font-size: .9rem;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
-.bingo-cell h4 {
-  margin: 2px;
+.bingo-cell p {
+  margin: 0;
 }
+
 .hide {
   display: none;
 }
 
-@media screen and (max-width: 956px) {
+@media screen and (max-width: 986px) {
   .entry-container {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-@media screen and (max-width: 816px) {
-  .bingo {
-    height: 400px;
-    width: 400px;
+@media screen and (max-width: 856px) {
+  .pages {
+    padding: 20px 4px;
   }
   .bingo-cell {
-    height: 80px;
-    width: 80px;
-    font-size: .48rem;
+    font-size: .8rem;
   }
   nav span,
   .nav-button {
@@ -248,15 +246,15 @@ form.signup, form.login {
     text-align: end;
   }
 }
-@media screen and (max-width: 524px) {
-  .bingo {
-    height: 250px;
-    width: 250px;
+@media screen and (max-width: 784px) {
+  bingo-cell {
+    font-size: .65rem;
+    padding: 4px;
   }
+}
+@media screen and (max-width: 644px) {
   .bingo-cell {
-    height: 50px;
-    width: 50px;
-    font-size: .3rem;
+    font-size: .55rem;
   }
   nav span,
   .nav-button {
@@ -264,5 +262,21 @@ form.signup, form.login {
   }
   header h1 {
     font-size: .8rem;
+  }
+}
+@media screen and (max-width: 490px) {
+  .bingo-cell {
+    font-size: .5rem;
+    padding: 1px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .bingo-cell {
+    font-size: .47rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .bingo-cell {
+    font-size: .44rem;
   }
 }
