@@ -10,6 +10,10 @@ import EntryDetails from './components/EntryDetails'
 import EntryForm from './components/EntryForm'
 import Pagination from '../main/components/Pagination'
 
+import { IoIosCheckmarkCircleOutline, IoMdCloseCircleOutline } from "react-icons/io";
+
+
+
 const Entries = () => {
     const {collections} = useCollectionsContext()
     const {dispatch: pageDispatch} = usePageContext()
@@ -51,9 +55,13 @@ const Entries = () => {
     return (
         <div className={styles.container}>
             <Pagination />
+            <div className="entry-title">
                 <h2>{collections && collections[0].title}</h2>
-                <h2>Count: {bingos ? bingos.length : "0"}</h2>
-                {bingos.length > 25 ? <p>Good!</p> : <p>Not enough entries yet!</p>}
+                <div className="entry-count">
+                    <h2>Count: {bingos ? bingos.length : "0"}</h2>
+                    {bingos.length > 24 ? <IoIosCheckmarkCircleOutline className="icon check" /> : <IoMdCloseCircleOutline className="icon close" />}
+                </div>
+            </div>
             <div className="entry-container">
                 <div>
                     <EntryForm className="form"/>
