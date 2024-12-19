@@ -51,13 +51,12 @@ const Entries = () => {
     return (
         <div className={styles.container}>
             <Pagination />
+                <h2>{collections && collections[0].title}</h2>
             <div className="entry-container">
-                <h2>Entries:</h2>
-                <h1>{collections && collections[0].title}</h1>
                 <div>
                     <EntryForm className="form"/>
                 </div>
-                <div className="workouts">
+                <div className="entries">
                     {bingos && bingos.map((bingo) => (
                         <EntryDetails key={bingo._id} bingo={bingo} />
                     ))}

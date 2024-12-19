@@ -28,7 +28,6 @@ const EntryDetails = ({ bingo }) => {
     return (
         <div className="entry-details">
             <h4>{bingo.entry}</h4> 
-            <p>{formatDistanceToNow(new Date(bingo.createdAt), { addSuffix: true })}</p>
             <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
         </div>
     )
