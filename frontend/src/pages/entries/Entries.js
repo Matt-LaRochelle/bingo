@@ -52,6 +52,8 @@ const Entries = () => {
         <div className={styles.container}>
             <Pagination />
                 <h2>{collections && collections[0].title}</h2>
+                <h2>Count: {bingos ? bingos.length : "0"}</h2>
+                {bingos.length > 25 ? <p>Good!</p> : <p>Not enough entries yet!</p>}
             <div className="entry-container">
                 <div>
                     <EntryForm className="form"/>

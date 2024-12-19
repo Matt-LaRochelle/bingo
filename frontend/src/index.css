@@ -72,10 +72,11 @@ nav span {
   font-family: "Poppins";
   cursor: pointer;
   font-size: 1em;
+  transition: .5s;
 }
 .button:hover {
-  background: blue;
-  color: var(--primary-hover);
+  background: var(--primary-hover);
+  color: var(--feature);
 }
 .login-links {
   width: 130px;
@@ -121,14 +122,15 @@ nav span {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 .entry-details h4 {
-  margin: 30px 0 10px 0;
+  margin: 0;
   font-size: 1.2em;
   /* color: var(--primary); */
   max-width: 100%;
 }
-.entry-details span {
+.entry-details span,
+.material-symbols-outlined {
   position: absolute;
-  top: 5px;
+  bottom: 5px;
   right: 5px;
   cursor: pointer;
   background: var(--wall);
@@ -137,9 +139,13 @@ nav span {
   color: var(--text);
   transition: .5s;
 }
-.entry-details span:hover {
+.entry-details span:hover,
+.material-symbols-outlined:hover {
   background: var(--error);
   color: var(--feature);
+
+}
+.bingo-title-edit {
 
 }
 
@@ -164,6 +170,7 @@ input {
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
+  transition: .5s;
 }
 .form-button:hover {
   background: #0e8b5f;
@@ -201,14 +208,22 @@ form.signup, form.login {
   position: relative;
   text-align: center;
 }
-.bingo-title span {
+.bingo-title .bingo-title-edit {
   vertical-align: -4px;
   margin-left: 10px;
-}
-.bingo-title span:hover {
-  border: 2px solid var(--primary);
-  border-radius: 100%;
+
+  position: static;
   cursor: pointer;
+  background: var(--feature);
+  border: 2px solid var(--primary);
+  padding: 6px;
+  border-radius: 50%;
+  color: var(--primary);
+  transition: .5s;
+}
+.bingo-title .bingo-title-edit:hover {
+  background: var(--primary-hover);
+  color: var(--feature);
 }
 .bingo-buttons {
   display: flex;

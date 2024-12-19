@@ -17,7 +17,7 @@ const Pagination = () => {
     }
     const toForward = () => {
         if (page === 'collections') {
-            alert("Pick a theme")
+            alert("To move forward, please select a theme. If no themes exist, please create one.")
         } else if (page === 'entries') {
             dispatch({type: 'BINGO'})
         } else {

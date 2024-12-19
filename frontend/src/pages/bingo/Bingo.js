@@ -127,7 +127,7 @@ const Bingo = () => {
             </div>
             <input className={ editTheTitle ? "title": "hide" } type="text" placeholder='Title:' value={title} onChange={handleChange}></input>
             <div className="bingo-title">
-                <h2>{title}<span onClick={editTitle} class="material-symbols-outlined">
+                <h2>{title}<span onClick={editTitle} className="material-symbols-outlined bingo-title-edit">
                         edit
                     </span></h2>
                     

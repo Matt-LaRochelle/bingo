@@ -24,15 +24,24 @@
     color: var(--primary);
 }
 
-.pagination-container .button {
+/* .pagination-container .button {
     background-color: var(--primary);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
 }
+.pagination-container .button:hover {
+    background-color: var(--primary-hover);
+} */
 
 .pagination-container .inactive {
     background-color: gray;
     border-color: black;
+    color: var(--feature);
+}
+.pagination-container .inactive:hover {
+    background-color: hsl(0, 0%, 70%);
+    border-color: #222;
+    color: var(--feature);
 }
