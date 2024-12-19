@@ -18,10 +18,14 @@
 .pagination-container li {
     list-style: none;
     margin: 0 5px;
+    /* color: var(--primary-hover); */
+    text-shadow: 0 0 5px var(--feature);
+    transition: .5s;
 }
 
 .pagination-container li.active {
-    color: var(--primary);
+    color: var(--primary-neon);
+    text-shadow: 0 0 5px var(--primary-shadow);
 }
 
 /* .pagination-container .button {

@@ -5,6 +5,8 @@
 :root {
   --primary: #1aac83;
   --primary-hover: hsl(163, 74%, 29%);
+  --primary-neon: hsl(163, 74%, 59%);
+  --primary-shadow: hsl(163, 74%, 62%);
   --primary-bg: hsl(163, 74%, 94%);
   --error: #e7195a;
   --wall: #f1f1f1;
