@@ -52,7 +52,7 @@ const CollectionForm = () => {
                     onChange={(e) => setTitle(e.target.value)}
                     ></input>
                 {error && <div className="error">{error}</div>}
-                <button className={emptyFields && emptyFields.includes('title') ? 'error' : 'form-button'}>Create a new Theme</button>
+                <button className={emptyFields && emptyFields.includes('title') ? 'error' : 'button2'}>Create a new Theme</button>
             </form>
         </div>
     )

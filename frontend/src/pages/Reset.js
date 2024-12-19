@@ -78,7 +78,7 @@ function ResetPassword() {
           <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           <label htmlFor="confirm-password">Confirm Password</label>
           <input type="password" name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
-          <button className="form-button" disabled={isLoading} type="submit">Reset Password</button>
+          <button className="button2" disabled={isLoading} type="submit">Reset Password</button>
           {error && <div className="error">{error}</div>}
             {isLoading && 
                 <div className="loading">

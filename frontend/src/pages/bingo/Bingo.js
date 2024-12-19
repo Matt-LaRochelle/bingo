@@ -122,7 +122,7 @@ const Bingo = () => {
         {error && <div className="error">{error}</div>}
             <div className="bingo-buttons">
                 <button className="button" onClick={createCard}>Generate Card</button>
-                <button className="form-button" onClick={downloadCard}>Download Card</button>
+                <button className="button2" onClick={downloadCard}>Download Card</button>
 
             </div>
             <input className={ editTheTitle ? "title": "hide" } type="text" placeholder='Title:' value={title} onChange={handleChange}></input>

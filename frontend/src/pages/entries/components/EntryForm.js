@@ -57,7 +57,7 @@ const EntryForm = () => {
                 className={emptyFields && emptyFields.includes('entry') ? 'error' : ''}
             />
 
-            <button className="form-button">Add Entry</button>
+            <button className="button2">Add Entry</button>
             {error && <div className="error">{error}</div>}
         </form>
     )
