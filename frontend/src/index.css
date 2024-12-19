@@ -4,6 +4,7 @@
 /* layout */
 :root {
   --primary: #1aac83;
+  --primary-hover: hsl(163, 74%, 49%);
   --error: #e7195a;
   --wall: #f1f1f1;
   --feature: #fff;
@@ -72,6 +73,10 @@ nav span {
   cursor: pointer;
   font-size: 1em;
 }
+.button:hover {
+  background: blue;
+  color: var(--primary-hover);
+}
 .login-links {
   width: 130px;
   display: flex;
@@ -90,6 +95,7 @@ nav span {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 50px;
+  row-gap: 0px;
 }
 .entry-details {
   background: var(--feature);
@@ -142,6 +148,9 @@ input {
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
+}
+.form-button:hover {
+  background: #0e8b5f;
 }
 div.error {
   padding: 10px;

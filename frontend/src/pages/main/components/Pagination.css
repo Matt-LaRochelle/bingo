@@ -1,8 +1,18 @@
 .pagination-container {
     display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.pagination-container ul {
+    display: flex;
     justify-content: center;
-    margin-top: 20px;
-    border: 2px solid red;
+    align-items: flex-start;
+    padding: 7px;
+    margin: 0;
 }
 
 .pagination-container li {
@@ -23,5 +33,6 @@
 }
 
 .pagination-container .inactive {
-    display: none;
+    background-color: gray;
+    border-color: black;
 }

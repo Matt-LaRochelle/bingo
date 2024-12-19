@@ -49,20 +49,19 @@ const Entries = () => {
     }
 
     return (
-        <div className="entry-container">
+        <div className={styles.container}>
             <Pagination />
-            <div className={styles.pageButtons}>
-                <button className={styles.button} id="collection" onClick={pageSwitch}>Back to Collections</button>
-                <button className={styles.button} id="bingo" onClick={pageSwitch}>Generate Bingo Cards</button>
-            </div>
-            <h1>{collections && collections[0].title}</h1>
-            <div>
-                <EntryForm className="form"/>
-            </div>
-            <div className="workouts">
-                {bingos && bingos.map((bingo) => (
-                    <EntryDetails key={bingo._id} bingo={bingo} />
-                ))}
+            <div className="entry-container">
+                <h2>Entries:</h2>
+                <h1>{collections && collections[0].title}</h1>
+                <div>
+                    <EntryForm className="form"/>
+                </div>
+                <div className="workouts">
+                    {bingos && bingos.map((bingo) => (
+                        <EntryDetails key={bingo._id} bingo={bingo} />
+                    ))}
+                </div>
             </div>
         </div>
     )

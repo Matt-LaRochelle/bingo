@@ -108,11 +108,6 @@ const Bingo = () => {
         doc.save("a4.pdf");
     }
 
-    //Navigate back to the entries page
-    const navToEntries = () => {
-        pageDispatch({type: 'ENTRIES'})
-    }
-
     const editTitle = () => {
         setEditTheTitle(!editTheTitle)
     }
@@ -126,8 +121,7 @@ const Bingo = () => {
             <Pagination />
         {error && <div className="error">{error}</div>}
             <div className="bingo-buttons">
-                <button className="button" onClick={navToEntries}>Back to Entries</button>
-                <button className="form-button" onClick={createCard}>Generate Card</button>
+                <button className="button" onClick={createCard}>Generate Card</button>
                 <button className="form-button" onClick={downloadCard}>Download Card</button>
 
             </div>
