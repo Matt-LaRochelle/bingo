@@ -5,6 +5,7 @@ import { useCollectionsContext } from '../../hooks/useCollectionsContext'
 
 import BingoCell from './components/BingoCell'
 import { jsPDF } from "jspdf";
+import Pagination from '../main/components/Pagination'
 
 
 const Bingo = () => {
@@ -122,6 +123,7 @@ const Bingo = () => {
 
     return (
         <div className="create-bingo">
+            <Pagination />
         {error && <div className="error">{error}</div>}
             <div className="bingo-buttons">
                 <button className="button" onClick={navToEntries}>Back to Entries</button>

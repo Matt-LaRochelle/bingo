@@ -8,6 +8,7 @@ import styles from './Entries.module.css'
 // components
 import EntryDetails from './components/EntryDetails'
 import EntryForm from './components/EntryForm'
+import Pagination from '../main/components/Pagination'
 
 const Entries = () => {
     const {collections} = useCollectionsContext()
@@ -49,6 +50,7 @@ const Entries = () => {
 
     return (
         <div className="entry-container">
+            <Pagination />
             <div className={styles.pageButtons}>
                 <button className={styles.button} id="collection" onClick={pageSwitch}>Back to Collections</button>
                 <button className={styles.button} id="bingo" onClick={pageSwitch}>Generate Bingo Cards</button>

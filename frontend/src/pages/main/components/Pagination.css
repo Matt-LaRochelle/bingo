@@ -1,0 +1,15 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border: 2px solid red;
+}
+
+.pagination-container li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.pagination-container li:active {
+    color: var(--feature);
+}

@@ -3,6 +3,8 @@ import { useCollectionsContext } from '../../hooks/useCollectionsContext'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import styles from './Collections.module.css'
 
+import Pagination from '../main/components/Pagination'
+
 import CollectionDetails from './components/CollectionDetails'
 import CollectionForm from './components/CollectionForm'
 
@@ -35,6 +37,7 @@ const Collections = () => {
 
     return (
         <div className={styles.container}>
+            <Pagination />
             <h2>Collections:</h2>
             <div className={styles.collections}>
                 <div>
