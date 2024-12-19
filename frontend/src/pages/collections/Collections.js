@@ -38,7 +38,7 @@ const Collections = () => {
     return (
         <div className={styles.container}>
             <Pagination />
-            <h2>Collections:</h2>
+            <h2>Themes:</h2>
             <div className={styles.collections}>
                 <div>
                     <CollectionForm />
